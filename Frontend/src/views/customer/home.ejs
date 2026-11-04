@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ</title>
+    <!-- Logo load -->
+    <link
+      rel="icon"
+      href="/assets/image/logo/logo-load.png"
+      type="image/icon type"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/grid.css" />
+    <link rel="stylesheet" href="/assets/css/home.css" />
+    <link rel="stylesheet" href="/assets/css/heroSlider.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icon -->
+    <script
+      src="https://kit.fontawesome.com/7b9d660613.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('../partials/headerCustomer')%>
+    <!-- End Header -->
+
+    <!-- Hero Slider -->
+    <% if (typeof slides !== 'undefined' && slides && slides.length > 0) { %>
+      <section id="heroSlider" class="hero-slider-section">
+        <div class="hero-slider-track">
+          <% slides.forEach((slide, index) => { %>
+            <div class="hero-slide <%= index === 0 ? 'active' : '' %>" data-index="<%= index %>">
+              <div class="hero-slide-bg" style="background-image: url('<%= slide.image_url %>');"></div>
+              <div class="hero-slide-overlay"></div>
+              <div class="hero-slide-content">
+                <div class="grid wide">
+                  <div class="hero-caption-box">
+                    <div class="hero-slide-tag">
+                      <i class="fa-solid fa-compass"></i> Điểm Đến Hấp Dẫn
+                    </div>
+                    <% if (slide.title) { %>
+                      <h1 class="hero-slide-title"><%= slide.title %></h1>
+                    <% } %>
+                    <% if (slide.description) { %>
+                      <p class="hero-slide-desc"><%= slide.description %></p>
+                    <% } %>
+                    <div>
+                      <% if (slide.link_url && slide.link_url !== '/') { %>
+                        <a href="<%= slide.link_url %>" class="hero-slide-btn">
+                          Khám Phá Ngay <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                      <% } else { %>
+                        <a href="#tours-section" class="hero-slide-btn scroll-to-tours">
+                          Xem Các Tour Du Lịch <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                      <% } %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+
+        <% if (slides.length > 1) { %>
+          <!-- Arrows -->
+          <button class="hero-slider-arrow hero-arrow-prev" aria-label="Slide trước">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="hero-slider-arrow hero-arrow-next" aria-label="Slide kế tiếp">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <!-- Dots Indicator -->
+          <div class="hero-slider-dots">
+            <% slides.forEach((slide, index) => { %>
+              <div class="hero-dot <%= index === 0 ? 'active' : '' %>" data-index="<%= index %>"></div>
+            <% }); %>
+          </div>
+        <% } %>
+
+        <!-- Scroll Down indicator -->
+        <a href="#tours-section" class="hero-scroll-down" aria-label="Cuộn xuống để xem tour">
+          <div class="hero-scroll-mouse">
+            <div class="hero-scroll-wheel"></div>
+          </div>
+          <span>Cuộn xuống</span>
+        </a>
+      </section>
+    <% } %>
+    <!-- End Hero Slider -->
+    <!-- Body content -->
+    <div class="homepage" id="tours-section">
+      <div class="grid wide homepage__content">
+        <div class="row">
+          <div class="col l-3">
+            <div class="tour-filter">
+              <div class="tour-filter__heading">BỘ LỌC TÌM KIẾM</div>
+              <div class="tour-filter__form">
+                <h5 class="tour-filter__title">Ngân sách:</h5>
+                <ul class="tour-filter__box">
+                  <li
+                    class="tour-filter__option budget"
+                    data-minBudget="0"
+                    data-maxBudget="5000000"
+                  >
+                    Dưới 5 triệu
+                  </li>
+                  <li
+                    class="tour-filter__option budget"
+                    data-minBudget="5000000"
+                    data-maxBudget="10000000"
+                  >
+                    Từ 5 - 10 triệu
+                  </li>
+                  <li
+                    class="tour-filter__option budget"
+                    data-minBudget="10000000"
+                    data-maxBudget="20000000"
+                  >
+                    Từ 10 - 20 triệu
+                  </li>
+                  <li
+                    class="tour-filter__option budget"
+                    data-minBudget="20000000"
+                  >
+                    Trên 20 triệu
+                  </li>
+                </ul>
+                <h5 class="tour-filter__title">Điểm khởi hành:</h5>
+                <div class="tour-filter__box-input province departure-point">
+                  <span class="tour-filter__box-text" data-value=""
+                    >Tất cả</span
+                  >
+                  <span class="icon">
+                    <i class="fa-solid fa-chevron-up"></i>
+                  </span>
+                  <ul class="tour-filter__option-box">
+                    <li data-slug="" class="tour-filter__option-item active">
+                      Tất cả
+                    </li>
+                  </ul>
+                </div>
+                <h5 class="tour-filter__title">Điểm đến:</h5>
+                <div class="tour-filter__box-input province destination">
+                  <span data-value="" class="tour-filter__box-text"
+                    >Tất cả</span
+                  >
+                  <span class="icon">
+                    <i class="fa-solid fa-chevron-up"></i>
+                  </span>
+                  <ul class="tour-filter__option-box">
+                    <li data-slug="" class="tour-filter__option-item active">
+                      Tất cả
+                    </li>
+                  </ul>
+                </div>
+                <h5 class="tour-filter__title">Ngày đi:</h5>
+                <div class="tour-filter__box-input">
+                  <!-- <span>T7, 20 tháng 12</span> -->
+                  <input
+                    type="date"
+                    name="startDate"
+                    class="tour-filter__input-date"
+                  />
+                </div>
+                <h5 class="tour-filter__title">Dòng tour:</h5>
+                <ul class="tour-filter__box">
+                  <li class="tour-filter__option type" data-id="4">Cao cấp</li>
+                  <li class="tour-filter__option type" data-id="3">
+                    Tiêu chuẩn
+                  </li>
+                  <li class="tour-filter__option type" data-id="1">
+                    Tiết kiệm
+                  </li>
+                  <li class="tour-filter__option type" data-id="2">Giá tốt</li>
+                </ul>
+                <h5 class="tour-filter__title">Phương tiện:</h5>
+                <ul class="tour-filter__box">
+                  <li class="tour-filter__option transport" data-id="1">Xe</li>
+                  <li class="tour-filter__option transport" data-id="2">
+                    Máy bay
+                  </li>
+                </ul>
+                <button class="tour-filter__submit">Áp dụng</button>
+              </div>
+            </div>
+          </div>
+          <div class="col l-9">
+            <div class="tour-list">
+              <div class="tour-list__heading">
+                <p class="tour-list__text">
+                  Chúng tôi tìm thấy <span>0</span> chương trình tour cho quý
+                  khách
+                </p>
+                <div class="tour-list__sort">
+                  <span>Sắp xếp theo:</span>
+                  <div class="tour-list__sort-box">
+                    <span
+                      class="tour-list__sort-box-text"
+                      data-value="price,asc"
+                      >Giá từ thấp đến cao</span
+                    >
+                    <span class="icon">
+                      <i class="fa-solid fa-chevron-up"></i>
+                    </span>
+                    <ul class="tour-list__box-option">
+                      <li class="tour-list__box-item">
+                        <a
+                          data-value="price,asc"
+                          href="#"
+                          class="tour-list__box-link active"
+                          >Giá từ thấp đến cao</a
+                        >
+                      </li>
+                      <li class="tour-list__box-item">
+                        <a
+                          data-value="price,desc"
+                          href="#"
+                          class="tour-list__box-link"
+                          >Giá từ cao đến thấp</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tour-list__item-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End body content -->
+    <!-- Footer -->
+    <%- include('../partials/footerCustomer')%>
+    <!-- End Footer -->
+    <!-- Javascript -->
+    <%- include('../partials/baseScriptFE')%>
+    <script src="/js/components/headerLogin.js"></script>
+    <script src="/js/heroSlider.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/components/buttonToTop.js"></script>
+    <script src="/js/logout.js"></script>
+  </body>
+</html>

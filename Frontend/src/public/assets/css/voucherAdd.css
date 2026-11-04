@@ -1,0 +1,122 @@
+/* ========================================================
+   MODERN VOUCHER FORM CSS - 3TV TRAVEL ADMIN
+   ======================================================== */
+
+.voucher-crud {
+  display: flex !important;
+  width: 100% !important;
+  flex: 1 !important;
+  background-color: #f8fafc !important;
+  min-height: 100vh !important;
+}
+
+.voucher__admin--add-form {
+  width: 100% !important;
+  padding: 30px !important;
+  box-sizing: border-box !important;
+}
+
+.voucher-crud-title {
+  width: 100% !important;
+  text-align: center !important;
+  background: transparent !important;
+  padding: 10px 0 25px !important;
+  color: #0f172a !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  margin: 0 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.crud-voucher-form {
+  max-width: 650px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 32px 36px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+  box-sizing: border-box !important;
+}
+
+.form-label-value {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 18px !important;
+}
+
+.form-label {
+  padding: 0 0 6px 0 !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+}
+
+.voucher-input {
+  padding: 10px 14px !important;
+  font-size: 1.35rem !important;
+  font-family: 'Mulish', sans-serif !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+.voucher-input:focus {
+  border-color: #0b5da7 !important;
+  background-color: #ffffff !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(11, 93, 167, 0.15) !important;
+}
+
+.form-button {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+  padding: 18px 0 0 0 !important;
+  margin-top: 20px !important;
+  border-top: 1px solid #f1f5f9 !important;
+}
+
+.form-button-submit {
+  width: auto !important;
+  padding: 10px 24px !important;
+  border: none !important;
+  background: linear-gradient(135deg, #0b5da7 0%, #0284c7 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.35rem !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(11, 93, 167, 0.3) !important;
+}
+
+.form-button-submit:hover {
+  background: linear-gradient(135deg, #084379 0%, #0369a1 100%) !important;
+  box-shadow: 0 4px 12px rgba(11, 93, 167, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+.form-button-cancel {
+  padding: 10px 22px !important;
+  background-color: #ffffff !important;
+  color: #64748b !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 1.35rem !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.form-button-cancel:hover {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+}

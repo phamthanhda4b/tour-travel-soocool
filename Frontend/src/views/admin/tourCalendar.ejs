@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cập nhật lịch Tour</title>
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/assets/css/tourCalendar.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+</head>
+
+<body>
+  <div class="tour-crud">
+    <%- include('./menuBar.ejs') %>
+    <div class="tour__admin--add-form" id="addTourForm">
+        <h1>Lịch Trình của Tour</h1>
+        <div class='voucher__admin--function'>
+            <div class='box__action--button'>
+              <span class='box__action--title' >Hành động</span>
+              <button class='action__button action__add' data-link="/calendar/add">
+                <FontAwesomeIcon icon={faPlus}/> Thêm mới
+              </button>
+              <button class='action__button action__lock' data-link="/calendar/modify">
+                <FontAwesomeIcon icon={faPenToSquare} /> Sửa
+              </button>
+              <button class='action__button action__delete'>
+                <FontAwesomeIcon icon={faLock} /> xóa
+              </button>
+            </div>
+          </div>
+        <div class="tour__admin--table">
+            <div class="tour__admin--table--header">
+              <div class="tour__admin--table--title"></div>
+              <div class="tour__admin--table--title">Mã Lịch Trình</div>
+              <div class="tour__admin--table--title">Ngày Khởi Hành</div>
+              <div class="tour__admin--table--title">Slot</div>
+              <div class="tour__admin--table--title">Voucher</div>
+            </div>
+        </div>
+        <div class='tour__admin--table--body'>
+        </div>
+      <%- include('../partials/baseScript')%>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/tourCalendar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+/* ========================================================
+   MODERN ORDER ADMIN DETAIL CSS - 3TV TRAVEL
+   ======================================================== */
+
+.order-detail {
+  width: 100% !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 36px !important;
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif !important;
+}
+
+.order-detail-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 25px;
+}
+
+.form-infor {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.item-infor {
+  display: flex;
+  gap: 10px;
+  font-size: 1.4rem;
+  padding: 8px 0;
+  font-weight: 600;
+  color: #334155;
+}
+
+.item-infor strong,
+.item-infor span:first-child {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.infor-tour,
+.infor-member {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  margin-bottom: 24px;
+  padding: 0 !important;
+}
+
+.infor-tour-header,
+.infor-member-header {
+  background-color: #f8fafc !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  color: #475569 !important;
+  padding: 14px 18px !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infor-tour-data,
+.infor-member-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px !important;
+  border-bottom: 1px solid #f1f5f9;
+  background-color: #ffffff;
+}
+
+.infor-tour-header-data,
+.infor-tour-ele {
+  flex: 1;
+  text-align: center;
+  color: #1e293b;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.btn-update-status {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0b5da7 0%, #0284c7 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(11, 93, 167, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-update-status:hover {
+  background: linear-gradient(135deg, #084379 0%, #0369a1 100%);
+  transform: translateY(-1px);
+}

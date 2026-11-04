@@ -1,0 +1,411 @@
+.homepage {
+  padding-top: 40px;
+  $mb: 16px;
+  $border-color: #e5e5e5;
+  .homepage__content {
+    background: #fff;
+    .tour-filter {
+      .tour-filter__heading {
+        font-size: $fs-small + 0.2em;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .tour-filter__form {
+        background-color: #f8f8f8;
+        padding: 24px 16px;
+        border-radius: 10px;
+        .tour-filter__title {
+          font-size: $fs-small;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+        .tour-filter__box {
+          display: grid;
+          grid-template-columns: 48% 48%;
+          gap: 10% 4%;
+          margin-bottom: $mb;
+          .tour-filter__option {
+            background-color: #fff;
+            padding: 6px 14px;
+            text-align: center;
+            font-size: $fs-small - 0.2em;
+            color: #5d5d5d;
+            font-weight: bold;
+            border-radius: 6px;
+            border: 1px solid $border-color;
+            &.active {
+              background-color: #0b5da7;
+              color: #fff;
+              border: 1px solid #0b5da7;
+              &:hover {
+                cursor: default;
+                color: #fff;
+                background-color: #0b5da7;
+              }
+            }
+            &:hover {
+              cursor: pointer;
+              color: #0b5da7;
+              background-color: #daefff;
+              border: 1px solid #0b5da7;
+              transition: ease-in-out 0.2s all;
+            }
+          }
+        }
+        .tour-filter__box-input {
+          background-color: #fff;
+          border: 1px solid $border-color;
+          padding: 8px 14px;
+          border-radius: 6px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: $mb;
+          position: relative;
+          &:hover {
+            cursor: pointer;
+            background-color: #daefff;
+            border: 1px solid #0b5da7;
+            transition: ease-in-out 0.2s all;
+            span {
+              color: #0b5da7;
+            }
+            .tour-filter__input-date {
+              color: #0b5da7;
+              background-color: #daefff;
+              transition: ease-in-out 0.2s all;
+              cursor: pointer;
+            }
+          }
+          .tour-filter__input-date {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: $fs-small - 0.2em;
+            font-weight: bold;
+            color: #000;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          span {
+            font-size: $fs-small - 0.1em;
+            font-weight: bold;
+            color: #000;
+          }
+          .tour-filter__option-box {
+            display: none;
+            position: absolute;
+            top: 120%;
+            left: 0;
+            width: 100%;
+            height: auto;
+            max-height: 160px;
+            background-color: white;
+            z-index: 10;
+            border-radius: 4px;
+            overflow-y: auto;
+            padding: 10px;
+            box-shadow: 0px 0px 2px 0px #a7a5a5;
+            &.active {
+              display: block;
+            }
+            .tour-filter__option-item {
+              display: block;
+              padding: 8px 12px;
+              font-size: $fs-small - 0.1em;
+              line-height: $fs-small - 0.1em;
+              font-weight: normal;
+              border-radius: 6px;
+              &:hover {
+                background-color: #daefff;
+                cursor: pointer;
+              }
+              &.active {
+                cursor: default;
+                color: $color-primary;
+                font-size: $fs-small;
+                font-weight: bold;
+                background-color: #fff;
+              }
+            }
+          }
+        }
+        .tour-filter__submit {
+          background-color: $color-primary;
+          padding: 6px 0px;
+          border-radius: 6px;
+          text-align: center;
+          font-size: $fs-small -0.1em;
+          font-weight: bold;
+          width: 100%;
+          color: #fff;
+          border: 1px solid $color-primary;
+          filter: brightness(0.94);
+          &:hover {
+            cursor: pointer;
+            filter: brightness(1);
+            transition: ease-in-out 0.2s all;
+          }
+        }
+      }
+    }
+    .tour-list {
+      .tour-list__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        .tour-list__text {
+          font-size: $fs-medium - 0.5em;
+          font-weight: 450;
+          color: #171717;
+          span {
+            font-size: $fs-medium - 0.4em;
+            color: $color-primary;
+          }
+        }
+        .tour-list__sort {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          span {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: $fs-medium - 0.6em;
+            color: #000;
+          }
+          .tour-list__sort-box {
+            border-radius: 6px;
+            border: 1px solid $border-color;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 240px;
+            position: relative;
+            .tour-list__box-option {
+              &.active {
+                display: block;
+                transition: 0.2s all ease-in-out;
+              }
+              display: none;
+              position: absolute;
+              top: 120%;
+              left: 0;
+              background-color: #fff;
+              width: 85%;
+              box-shadow: 0px 0px 3px 0px #a7a5a5;
+              padding: 10px;
+              border-radius: 6px;
+              z-index: 9;
+              .tour-list__box-item {
+                .tour-list__box-link {
+                  display: block;
+                  padding: 8px;
+                  font-size: $fs-small - 0.1em;
+                  line-height: $fs-small - 0.1em;
+                  font-weight: normal;
+                  border-radius: 6px;
+                  &:hover {
+                    background-color: #daefff;
+                    cursor: pointer;
+                  }
+                  &.active {
+                    cursor: default;
+                    color: $color-primary;
+                    font-size: $fs-small;
+                    font-weight: bold;
+                    background-color: #fff;
+                  }
+                }
+              }
+            }
+            &:hover {
+              cursor: pointer;
+              background: #daefff;
+              border: 1px solid #0b5da7;
+              transition: ease-in-out 0.2s all;
+              span {
+                color: #0b5da7;
+              }
+            }
+            span {
+              font-size: $fs-medium - 0.8em;
+              color: #000;
+              font-weight: 500;
+              margin: 0;
+            }
+          }
+        }
+      }
+      .tour-list__item-container {
+        .tour-list__item {
+          margin-top: 16px;
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          overflow: hidden;
+          border: 1px solid $border-color;
+          &:hover {
+            box-shadow: 0px 0px 10px 4px #dad9d9;
+            transition: ease-in-out 0.2s all;
+          }
+          .tour-list__item-img {
+            width: 340px;
+            min-width: 340px;
+            align-self: stretch;
+            position: relative;
+            img.tour-img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            .tour-list__item-type {
+              font-size: $fs-small;
+              font-weight: bold;
+              display: inline-block;
+              padding: 8px 12px;
+              position: absolute;
+              $posi: 10px;
+              left: $posi;
+              bottom: $posi;
+              background-color: white;
+              cursor: default;
+              color: #fff;
+              border-radius: 4px;
+              &.--thrifty {
+                background-color: #228b22;
+              }
+              &.--good-price {
+                background-color: #ffd700;
+              }
+              &.--high {
+                background-color: #ff4500;
+              }
+              &.--standard {
+                background-color: #1e90ff;
+              }
+            }
+          }
+          .tour-list__item-info {
+            align-self: stretch;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 16px;
+            .tour-list__item--top {
+              margin-bottom: 40px;
+              width: 100%;
+              .tour-list__item-heading {
+                font-size: $fs-medium;
+                color: #000;
+                font-weight: bold;
+                line-height: $fs-medium - 0.8em;
+                margin-bottom: 10px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              .tour-list__item-box {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                gap: 10px 5px;
+                .tour-list__item-col {
+                  &.--calendar {
+                    grid-column: 1 / 3;
+                  }
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  font-size: $fs-small;
+                  font-weight: normal;
+                  color: #000;
+                  span {
+                    margin-right: 6px;
+                  }
+                  span.icon {
+                    font-size: $fs-small + 0.2em;
+                    color: #171717;
+                    width: 30px;
+                    margin-right: 6px;
+                  }
+                  span.tour-list__item-value {
+                    font-weight: bold;
+                  }
+                  .tour-list__item-day-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .tour-list__item-startDay {
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      max-width: 300px;
+                      overflow-x: auto;
+                      scroll-behavior: smooth;
+                      &::-webkit-scrollbar {
+                        display: none;
+                      }
+                      .tour-list__item-day {
+                        border: 1px solid red;
+                        border-radius: 6px;
+                        padding: 8px 6px;
+                        color: red;
+                        background-color: #fff;
+                        font-size: $fs-small - 0.4em;
+                        margin-right: 6px;
+                        &:hover {
+                          cursor: pointer;
+                          background-color: red;
+                          color: #fff;
+                          transition: ease-in-out 0.2s all;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .tour-list__item--bottom {
+              align-self: stretch;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .tour-list__item-price {
+                font-size: $fs-medium;
+                font-weight: bold;
+                color: red;
+                line-height: $fs-small - 0.4em;
+                span {
+                  font-weight: normal;
+                  font-size: $fs-small - 0.6em;
+                  color: #171717;
+                }
+              }
+              .tour-list__item-btn-detail {
+                padding: 12px 16px;
+                border: 1px solid $color-primary;
+                font-size: $fs-small;
+                font-weight: bold;
+                color: #fff;
+                background-color: $color-primary;
+                border-radius: 6px;
+                &:hover {
+                  cursor: pointer;
+                  background: #daefff;
+                  border: 1px solid #0b5da7;
+                  transition: ease-in-out 0.2s all;
+                  color: #0b5da7;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

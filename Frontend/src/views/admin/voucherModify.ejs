@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Thêm mới voucher</title>
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/assets/css/voucherAdd.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+</head>
+
+<body>
+  <div class="voucher-crud">
+    <%- include('./menuBar.ejs') %>
+      <div class="voucher__admin--add-form" id="addVoucherForm">
+        <h3 class="voucher-crud-title">Sửa thông tin voucher</h3>
+        <form class="crud-voucher-form">
+          <div class="form-label-value">
+            <label class="form-label" for="voucherName">Tên voucher</label>
+            <input type="text" class="voucher-input" id="voucherName" name="voucherName" required>
+          </div>
+          <div class="form-label-value">
+            <label class="form-label" for="voucherType" >Loại voucher</label>
+            <select class="voucher-input"id="voucherType">
+              <option value="1">Tiền</option>
+              <option value="0">Phần trăm</option>
+            </select>
+          </div>
+          <div class="form-label-value">
+            <label class="form-label" for="voucherValue">Giá trị</label>
+            <input type="number" class="voucher-input" id="voucherValue" name="voucherValue" required>
+          </div>
+          <div class="form-label-value">
+            <label class="form-label" for="voucherStartDate">Ngày bắt đầu</label>
+            <input type="date" class="voucher-input" id="voucherStartDate" name="voucherStartDate" required>
+          </div>
+          <div class="form-label-value">
+            <label class="form-label" for="voucherExpiryDate">Ngày hết hạn</label>
+            <input type="date" class="voucher-input" id="voucherExpiryDate" name="voucherExpiryDate" required>
+          </div>
+          <div class="form-button">
+            <button class="form-button-cancel" type="button"  id="cancelAddVoucher">Hủy</button>
+            <button class="form-button-submit" type="submit">Lưu</button>
+          </div>
+        </form>
+      </div>
+      <%- include('../partials/baseScript')%>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="/js/voucherModify.js"></script>
+</body>
+
+</html>

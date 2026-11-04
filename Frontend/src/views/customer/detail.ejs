@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- link css -->
+    <link rel="stylesheet" href="/assets/css/home.css" />
+    <link rel="stylesheet" href="/assets/css/detail.css" />
+    <link rel="stylesheet" href="/assets/css/grid.css" />
+    <!-- end link css -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Icon -->
+    <script
+      src="https://kit.fontawesome.com/7b9d660613.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Trang chi tiết</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <%- include('../partials/headerCustomer')%>
+    <!-- End Header -->
+
+    <!-- Body Content -->
+    <section class="detailpage-main">
+      <div class="tour-header">
+        <h2></h2>
+        <!-- lấy api title ở đây -->
+      </div>
+
+      <div class="tabs-detail">
+        <div class="tabs-detail_container">
+          <ul>
+            <li>
+              <a href="#overview" title="Tổng quan">Tổng quan</a>
+            </li>
+            <li>
+              <a href="#tour-info" title="Lịch khởi hành">Lịch khởi hành</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tour-detail">
+        <div class="tour-detail-content">
+          <div class="tour-detail_content-left">
+            <div class="img-main">
+              <img src="" alt="picture" />
+              <!-- lấy api ảnh vào đây -->
+            </div>
+
+            <div id="tour-info">
+              <div class="selection-detail" id="tour-info">
+                <h3 class="title">LỊCH KHỞI HÀNH</h3>
+                <div class="calender-tour">
+                  <div class="calendar-container">
+                    <!-- Sidebar -->
+                    <div class="calendar-sidebar">
+                      <h3>Chọn tháng</h3>
+                      <ul id="monthList">
+                        danh sách tháng/năm
+                      </ul>
+                    </div>
+
+                    <!-- Calendar -->
+                    <div class="calendar">
+                      <!-- Header -->
+                      <div class="calendar-header">
+                        <button class="prev-month" id="prevMonth">❮</button>
+                        <h2 class="month-name" id="monthName">Tên tháng/năm</h2>
+                        <button class="next-month" id="nextMonth">❯</button>
+                      </div>
+
+                      <!-- Weekdays -->
+                      <div class="calendar-weekdays">
+                        <div>T2</div>
+                        <div>T3</div>
+                        <div>T4</div>
+                        <div>T5</div>
+                        <div>T6</div>
+                        <div class="weekend">T7</div>
+                        <div class="weekend">CN</div>
+                      </div>
+
+                      <!-- Days -->
+                      <div class="calendar-days" id="calendarDays"></div>
+                      <!-- lấy api voucher với giá vào đây -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="overview">
+              <div class="tour-overview" id="overview">
+                <h3 class="title">THÔNG TIN THÊM VỀ CHUYẾN ĐI</h3>
+                <div class="overview-content">
+                  <div class="overview-i1">
+                    <div class="overview-item">
+                      <div class="overview-content-title">Điểm thăm quan</div>
+                      <p
+                        title="Singapore, Malaysia, Kuala Lumpur, Genting"
+                        class="dtq"
+                      >
+                        Singapore, Malaysia, Kuala Lumpur, Genting
+                        <!-- lấy api sight_seeing -->
+                      </p>
+                    </div>
+                    <div class="overview-item">
+                      <div class="overview-content-title">Ẩm thực</div>
+                      <p title="Theo thực đơn" class="at">
+                        Theo thực đơn
+                        <!-- lấy api cuisine -->
+                      </p>
+                    </div>
+                    <div class="overview-item">
+                      <div class="overview-content-title">
+                        Đối tượng thích hợp
+                      </div>
+                      <p title="Gia đình nhiều thế hệ, Thanh niên" class="dt">
+                        Gia đình nhiều thế hệ, Thanh niên
+                        <!-- lấy api suitable_people -->
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="overview-i2">
+                    <div class="overview-item">
+                      <div class="overview-content-title">
+                        Thời gian lý tưởng
+                      </div>
+                      <p title="quanh năm" class="tg">
+                        quanh năm
+                        <!-- lấy api time_suiable -->
+                      </p>
+                    </div>
+                    <div class="overview-item">
+                      <div class="overview-content-title">Phương tiện</div>
+                      <p title="Máy bay, Xe du lịch" class="pt">
+                        Máy bay, Xe du lịch
+                        <!-- lấy api transport -->
+                      </p>
+                    </div>
+                    <div class="overview-item">
+                      <div class="overview-content-title">Khuyễn mãi</div>
+                      <p title="Đã ưu đãi trực tiếp vào giá tour" class="km">
+                        Đã ưu đãi trực tiếp vào giá tour
+                        <!-- lấy api sale_description -->
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tour-detail_content-right">
+            <div class="booking-tour">
+              <div class="border-shadow">
+                <div class="tour-pice">
+                  <div class="tour-orderpice">
+                    <h4>Giá từ :</h4>
+                  </div>
+                  <div class="pice">
+                    <p>13.590.000 đ<span>/Khách</span></p>
+                    <!-- lấy api giá -->
+                  </div>
+                </div>
+                <div class="tour-pice-pagecode">
+                  <p>Mã chương trình :</p>
+                  <span>NNSGN221</span>
+                  <!-- lấy api id -->
+                </div>
+                <!-- <button class="btn-pick" type="button" aria-label="Chọn ngày khởi hành">
+                                Chọn ngày khởi hành
+                            </button> -->
+                <div class="tourPice-info">
+                  <div class="info_tour_detail">
+                    <!-- <div class="info">Mã tour: <span class="idtour"></span></div> -->
+                    <div class="info">
+                      Khởi hành: <span class="departure"></span>
+                    </div>
+                    <!-- <div class="info">Ngày khởi hành: <span class="tmGo"></span></div> -->
+                    <div class="info">
+                      Ngày khởi hành:
+                      <select id="tourDate" class="tour-date">
+                        <!-- Các option ngày sẽ được thêm vào đây -->
+                      </select>
+                    </div>
+                    <div class="info">
+                      Ghế ngồi: <span id="tourSlot"></span>
+                    </div>
+
+                    <!-- lấy api cho các div này -->
+                  </div>
+                </div>
+                <div class="tourOption">
+                  <!-- <button class="diffirent-option" type="button">Ngày khác</button> -->
+                  <button class="order-tour" type="button">Đặt tour</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Body Content-->
+
+    <!-- Footer -->
+    <%- include('../partials/footerCustomer')%>
+    <!-- End Footer -->
+    <%- include('../partials/baseScriptFE')%>
+    <script src="/js/components/headerLogin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/js/detail.js"></script>
+    <script src="/js/logout.js"></script>
+  </body>
+</html>

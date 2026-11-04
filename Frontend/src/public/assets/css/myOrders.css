@@ -1,0 +1,361 @@
+/* CSS cho trang Tour đã đặt của khách hàng */
+.my-orders-page {
+  padding: 40px 0 80px;
+  background-color: #f8fafc;
+  min-height: calc(100vh - 80px);
+}
+
+.my-orders__header {
+  margin-bottom: 28px;
+}
+
+.my-orders__title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.my-orders__title i {
+  color: #0b5da7;
+}
+
+.my-orders__subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+/* Danh sách đơn hàng */
+.my-orders__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Thẻ đơn hàng */
+.order-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+/* Header của đơn */
+.order-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.order-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.order-card__id {
+  font-weight: 700;
+  color: #0b5da7;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.order-card__date {
+  color: #64748b;
+}
+
+/* Badge trạng thái */
+.order-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.order-badge--pending {
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.order-badge--received {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.order-badge--completed {
+  background-color: #d1fae5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.order-badge--canceled {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+/* Thân đơn hàng */
+.order-card__body {
+  padding: 20px 24px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .order-card__body {
+    flex-direction: column;
+  }
+}
+
+.order-card__thumb {
+  width: 160px;
+  height: 110px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #e2e8f0;
+}
+
+.order-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.order-card:hover .order-card__thumb img {
+  transform: scale(1.05);
+}
+
+.order-card__info {
+  flex: 1;
+}
+
+.order-card__tour-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.order-card__tour-name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.order-card__tour-name a:hover {
+  color: #0b5da7;
+}
+
+.order-card__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px 16px;
+  font-size: 13.5px;
+  color: #475569;
+}
+
+.order-card__grid-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.order-card__grid-item i {
+  color: #0b5da7;
+  width: 16px;
+  text-align: center;
+}
+
+/* Phần danh sách hành khách */
+.order-card__members {
+  margin-top: 18px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.order-card__members-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.order-card__members-title i.chevron {
+  transition: transform 0.2s ease;
+}
+
+.order-card__members-title.collapsed i.chevron {
+  transform: rotate(-90deg);
+}
+
+.order-card__members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-card__member-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 13px;
+}
+
+.order-card__member-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.order-card__member-meta {
+  color: #64748b;
+  display: flex;
+  gap: 12px;
+}
+
+/* Footer đơn hàng */
+.order-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-top: 1px solid #f1f5f9;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.order-card__total {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.order-card__total-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e11d48;
+  margin-left: 6px;
+}
+
+.order-card__actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-order {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-order--view {
+  background-color: #f1f5f9;
+  color: #0b5da7;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-order--view:hover {
+  background-color: #e2e8f0;
+  color: #084780;
+}
+
+.btn-order--cancel {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.btn-order--cancel:hover {
+  background-color: #fca5a5;
+  color: #7f1d1d;
+}
+
+/* Trạng thái trống */
+.orders-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px dashed #cbd5e1;
+}
+
+.orders-empty__icon {
+  font-size: 56px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.orders-empty__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.orders-empty__desc {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.orders-empty__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0b5da7;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.orders-empty__btn:hover {
+  background-color: #084780;
+}

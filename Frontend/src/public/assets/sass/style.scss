@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+// Variables and mixins
+// Utilities
+@import 'utilities/variables';
+// @import 'utilities/responsive';
+// @import 'utilities/filepond';
+
+// Base
+@import 'base/reset';
+
+// Layout
+@import 'layout/header';
+// @import 'layout/footer';
+
+// Components
+
+// Pages
+// Customer
+@import 'pages/customer/home';
+@import 'pages/customer/order';
+@import 'pages/customer/editInfoCustomer';
+// Admin

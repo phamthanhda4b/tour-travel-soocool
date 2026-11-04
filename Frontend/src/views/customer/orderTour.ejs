@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt tour</title>
+    <!-- Logo load -->
+    <link
+      rel="icon"
+      href="/assets/image/logo/logo-load.png"
+      type="image/icon type"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/grid.css" />
+    <link rel="stylesheet" href="/assets/css/home.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icon -->
+    <script
+      src="https://kit.fontawesome.com/7b9d660613.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Notification -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('../partials/headerCustomer')%>
+    <!-- End Header -->
+    <!-- Body content -->
+    <div class="orderpage">
+      <div class="grid wide orderpage__container">
+        <div class="row">
+          <div class="col l-12">
+            <div class="orderpage__header">
+              <h1 class="orderpage__header-title">Đặt tour</h1>
+              <div class="infor-step">
+                <!-- Item -->
+                <div class="infor-step__item active">
+                  <span class="infor-step__item-icon"
+                    ><i class="fa-solid fa-file-pen"></i>
+                  </span>
+                  <p class="infor-step__item-title">Nhập thông tin</p>
+                </div>
+                <!-- Arrow -->
+                <div class="infor-step__item">
+                  <span class="infor-step__item-icon --arrow">
+                    <i class="fa-solid fa-right-long"></i>
+                  </span>
+                </div>
+                <!-- Item -->
+                <!-- <div class="infor-step__item">
+                  <span class="infor-step__item-icon">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                  </span>
+                  <p class="infor-step__item-title">Thanh toán</p>
+                </div> -->
+                <!-- Arrow -->
+                <!-- <div class="infor-step__item">
+                  <span class="infor-step__item-icon --arrow">
+                    <i class="fa-solid fa-right-long"></i>
+                  </span>
+                </div> -->
+                <!-- Item -->
+                <div class="infor-step__item">
+                  <span class="infor-step__item-icon"
+                    ><i class="fa-solid fa-circle-check"></i>
+                  </span>
+                  <p class="infor-step__item-title">Đặt thành công</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col l-7">
+            <div class="customer-info">
+              <h3 class="customer-info__heading">Thông tin liên lạc</h3>
+              <div class="customer-info__box">
+                <div class="box__item">
+                  <p class="box__label">Họ và tên</p>
+                  <p class="name"></p>
+                  <!-- <input
+                    id="input-name"
+                    type="text"
+                    placeholder="Nhập họ và tên"
+                    class="box__input"
+                  /> -->
+                </div>
+                <div class="box__item">
+                  <p class="box__label">Điện thoại</p>
+                  <p class="phonenumber"></p>
+                </div>
+                <div class="box__item">
+                  <p class="box__label">Email</p>
+                  <p class="email"></p>
+                </div>
+                <div class="box__item">
+                  <p class="box__label">Địa chỉ</p>
+                  <p class="address"></p>
+                </div>
+              </div>
+              <h3 class="customer-info__heading">Hành khách</h3>
+              <div class="member-box">
+                <!-- Begin adult -->
+                <div class="member-box__item index">
+                  <p class="member-box__item-left">
+                    <span class="member-box__item-heading"> Người lớn</span>
+                    <span
+                      >Từ 12 trở lên
+                      <span><i class="fa-solid fa-circle-info"></i> </span>
+                    </span>
+                  </p>
+                  <p class="member-box__item-right">
+                    <span class="member-box__button-left">
+                      <i class="fa-solid fa-minus"></i>
+                    </span>
+                    <span data-value="1" class="member-box__current-value">
+                      1
+                    </span>
+                    <span class="member-box__button-right">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
+                  </p>
+                </div>
+                <!-- Begin young -->
+                <div class="member-box__item no-active">
+                  <p class="member-box__item-left">
+                    <span class="member-box__item-heading"> Trẻ em</span>
+                    <span
+                      >Từ 5 - 11 tuổi
+                      <span><i class="fa-solid fa-circle-info"></i> </span>
+                    </span>
+                  </p>
+                  <p class="member-box__item-right">
+                    <span class="member-box__button-left">
+                      <i class="fa-solid fa-minus"></i>
+                    </span>
+                    <span data-value="0" class="member-box__current-value">
+                      0
+                    </span>
+                    <span class="member-box__button-right">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
+                  </p>
+                </div>
+                <!-- Begin children -->
+                <div class="member-box__item no-active">
+                  <p class="member-box__item-left">
+                    <span class="member-box__item-heading"> Trẻ nhỏ</span>
+                    <span
+                      >Từ 2 - 4 tuổi
+                      <span><i class="fa-solid fa-circle-info"></i> </span>
+                    </span>
+                  </p>
+                  <p class="member-box__item-right">
+                    <span class="member-box__button-left">
+                      <i class="fa-solid fa-minus"></i>
+                    </span>
+                    <span data-value="0" class="member-box__current-value">
+                      0
+                    </span>
+                    <span class="member-box__button-right">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
+                  </p>
+                </div>
+                <!-- Begin baby -->
+                <div class="member-box__item no-active">
+                  <p class="member-box__item-left">
+                    <span class="member-box__item-heading"> Em bé</span>
+                    <span
+                      >Dưới 2 tuổi
+                      <span><i class="fa-solid fa-circle-info"></i> </span>
+                    </span>
+                  </p>
+                  <p class="member-box__item-right">
+                    <span class="member-box__button-left">
+                      <i class="fa-solid fa-minus"></i>
+                    </span>
+                    <span data-value="0" class="member-box__current-value">
+                      0
+                    </span>
+                    <span class="member-box__button-right">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <h3 class="customer-info__heading">Thông tin hành khách</h3>
+              <div class="customer-info__container">
+                <!-- Begin customer adult -->
+                <div class="customer-info__content customer-info__content--adult show" data-type="3">
+                  <p class="item__heading">
+                    <span class="item__icon">
+                      <i class="fa-solid fa-users"></i>
+                    </span>
+                    <span class="item__text">
+                      Người lớn
+                    </span>
+                    <span class="item__description">
+                      (Từ 12 tuổi trở lên)
+                    </span>
+                  </p>
+                  <div class="item__list-customer">
+                    <div class="item__detail-customer" data-type="3">
+                      <div class="customer__name">
+                        <label for="">Họ tên:</label>
+                        <input type="text" name="" id="" placeholder="Nhập họ tên" class="customer__input-name">
+                      </div>
+                      <div class="customer__gender">
+                        <label for="">Giới tính</label>
+                        <select name="" id="" class="customer__input-gender">
+                          <option value="NAM">Nam</option>
+                          <option value="NU">Nữ</option>
+                        </select>
+                      </div>
+                      <div class="customer__birthday">
+                        <label for="">Ngày sinh:</label>
+                        <input type="date" name="" id="" class="customer__input-birthday">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End customer adult -->
+                 <!-- Begin customer young -->
+                <div class="customer-info__content customer-info__content--young" data-type="1">
+                  <p class="item__heading">
+                    <span class="item__icon">
+                      <i class="fa-solid fa-children"></i>
+                    </span>
+                    <span class="item__text">
+                      Trẻ em
+                    </span>
+                    <span class="item__description">
+                      (Từ 5 - 10 tuổi)
+                    </span>
+                  </p>
+                  <div class="item__list-customer">
+                    <!-- <div class="item__detail-customer" data-type="1">
+                      <div class="customer__name">
+                        <label for="">Họ tên:</label>
+                        <input type="text" name="" id="" placeholder="Nhập họ tên" class="customer__input-name">
+                      </div>
+                      <div class="customer__gender">
+                        <label for="">Giới tính</label>
+                        <select name="" id="" class="customer__input-gender">
+                          <option value="Nam">Nam</option>
+                          <option value="Nữ">Nữ</option>
+                        </select>
+                      </div>
+                      <div class="customer__birthday">
+                        <label for="">Ngày sinh:</label>
+                        <input type="date" name="" id="" class="customer__input-birthday">
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                <!-- End customer young -->
+                <!-- Begin customer children -->
+                <div class="customer-info__content customer-info__content--children" data-type="2">
+                  <p class="item__heading">
+                    <span class="item__icon">
+                      <i class="fa-solid fa-children"></i>
+                    </span>
+                    <span class="item__text">
+                      Trẻ nhỏ
+                    </span>
+                    <span class="item__description">
+                      (Từ 2 - 4 tuổi)
+                    </span>
+                  </p>
+                  <div class="item__list-customer">
+                    <!-- <div class="item__detail-customer" data-type="2">
+                      <div class="customer__name">
+                        <label for="">Họ tên:</label>
+                        <input type="text" name="" id="" placeholder="Nhập họ tên" class="customer__input-name">
+                      </div>
+                      <div class="customer__gender">
+                        <label for="">Giới tính</label>
+                        <select name="" id="" class="customer__input-gender">
+                          <option value="Nam">Nam</option>
+                          <option value="Nữ">Nữ</option>
+                        </select>
+                      </div>
+                      <div class="customer__birthday">
+                        <label for="">Ngày sinh:</label>
+                        <input type="date" name="" id="" class="customer__input-birthday">
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                <!-- End customer children -->
+                <!-- Begin customer baby -->
+                <div class="customer-info__content customer-info__content--baby" data-type="0">
+                  <p class="item__heading">
+                    <span class="item__icon">
+                      <i class="fa-solid fa-baby"></i>
+                    </span>
+                    <span class="item__text">
+                      Em bé
+                    </span>
+                    <span class="item__description">
+                      (Dưới 2 tuổi)
+                    </span>
+                  </p>
+                  <div class="item__list-customer">
+                    <!-- <div class="item__detail-customer" data-type="0">
+                      <div class="customer__name">
+                        <label for="">Họ tên:</label>
+                        <input type="text" name="" id="" placeholder="Nhập họ tên" class="customer__input-name">
+                      </div>
+                      <div class="customer__gender">
+                        <label for="">Giới tính</label>
+                        <select name="" id="" class="customer__input-gender">
+                          <option value="Nam">Nam</option>
+                          <option value="Nữ">Nữ</option>
+                        </select>
+                      </div>
+                      <div class="customer__birthday">
+                        <label for="">Ngày sinh:</label>
+                        <input type="date" name="" id="" class="customer__input-birthday">
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                <!-- End customer baby -->
+              </div>
+              <h3 class="customer-info__heading">Ghi chú</h3>
+              <textarea name="" id="" cols="30" rows="10" class="customer__note" placeholder="Yêu cầu của khách hàng với chúng tôi..."></textarea>
+            </div>
+          </div>
+          <div class="col l-5">
+            <div class="tour-infor">
+              <h4 class="tour-infor__heading">Tóm tắt chuyến đi</h4>
+              <div class="tour-infor-detail">
+                <div class="infor-detail-tour">
+                  <div class="infor-tour-image">
+                    <img
+                      src="<%= tour.image %>"
+                      alt="Hinh anh tour"
+                      class="image-tour"
+                    />
+                  </div>
+                  <div class="infor-tour-name-id">
+                    <div class="infor-tour-name">
+                      <%= tour.name %>
+                    </div>
+                    <div class="infor-tour-id">
+                      <i class="fa-solid fa-ticket"></i>
+                      Mã tour:
+                      <span class="infor-tour-id-span">
+                        <%= tour.id %>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="infor-detail__date">
+                  <p class="infor-detail__left">
+                    <span class="icon">
+                      <i class="fa-solid fa-map-pin"></i>
+                    </span>
+                    Khởi hành: <span class="text"><%= tour.departure_point %></span>
+                  </p>
+                  <p class="infor-detail__right">
+                    <span class="icon">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    Thời gian: <span class="text">4N3Đ</span>
+                  </p>
+                  <p class="infor-detail__bottom">
+                    <span class="icon">
+                      <i class="fa-solid fa-hourglass-start"></i>
+                    </span>
+                    Ngày đi: <span class="text" data-value="<%= calendars.start_date%>"><%= calendars.start_date_format %></span>
+                  </p>
+                </div>
+                <div class="customer-bill">
+                  <div class="customer-bill__head">
+                    <p class="customer-bill__title">
+                      <span class="icon"
+                        ><i class="fa-solid fa-people-group"></i>
+                      </span>
+                      <span class="text">Khách hàng</span>
+                    </p>
+                    <p class="customer-bill__price">
+                      <span class="customer-bill__price-value customer"><%= Intl.NumberFormat('vi-VN').format(tour.price)  %></span>
+                      &#x20AB
+                    </p>
+                  </div>
+                  <ul class="customer-bill__list">
+                    <!-- Người lớn -->
+                    <li data-type="adult" class="customer-bill__item">
+                      <p class="customer-bill__attributes">Người lớn</p>
+                      <p class="customer-bill__box-value">
+                        <span class="customer-bill__value-size">1</span> x <span class="customer-bill__tour-price adult" data-tourPrice="<%= tour.price %>"><%= Intl.NumberFormat('vi-VN').format(tour.price) %>
+                        </span> &#x20AB
+                      </p>
+                    </li>
+                    <!-- Trẻ em -->
+                    <li data-type="young" class="customer-bill__item hide young">
+                      <p class="customer-bill__attributes">Trẻ em</p>
+                      <p class="customer-bill__box-value">
+                        <span class="customer-bill__value-size">0</span> x <span class="customer-bill__tour-price young"><%= tour.price %>
+                        </span> &#x20AB
+                      </p>
+                    </li>
+                    <!-- Trẻ nhỏ -->
+                    <li data-type="children" class="customer-bill__item hide children">
+                      <p class="customer-bill__attributes">Trẻ nhỏ</p>
+                      <p class="customer-bill__box-value">
+                        <span class="customer-bill__value-size">0</span> x <span class="customer-bill__tour-price children"><%= tour.price %>
+                        </span> &#x20AB
+                      </p>
+                    </li>
+                    <!-- Em bé -->
+                    <li data-type="baby" class="customer-bill__item hide baby">
+                      <p class="customer-bill__attributes">Em bé</p>
+                      <p class="customer-bill__box-value">
+                        <span class="customer-bill__value-size">0</span> x <span class="customer-bill__tour-price baby"><%= tour.price %>
+                        </span> &#x20AB
+                      </p>
+                    </li>
+                    <!-- <li class="customer-bill__item">
+                      <p class="customer-bill__attributes">Giảm giá</p>
+                      <p class="customer-bill__box-value"> 
+                        <span class="cutomer-bill__value-size --down">1.000.000</span> &#x20AB
+                      </p>
+                    </li> -->
+                  </ul>
+                  <div class="customer-bill__head --bottom">
+                    <p class="customer-bill__title">
+                      <span class="icon"
+                        ><i class="fa-solid fa-tag"></i>
+                      </span>
+                      <span class="text">Giảm giá</span>
+                    </p>
+                    <p class="customer-bill__price">
+                      <span data-value="<%=(calendars.voucher.type === 1) ? calendars.voucher.value : (calendars.voucher.value * tour.price)/100  %>" class="customer-bill__price-value sale"><%= (calendars.voucher.type === 1) ? Intl.NumberFormat('vi-VN').format(calendars.voucher.value) : Intl.NumberFormat('vi-VN').format((calendars.voucher.value * tour.price)/100) %></span>
+                      &#x20AB
+                    </p>
+                  </div>
+                  <div class="customer-bill__final">
+                    <div class="block-flex">
+                      <h4>Tổng tiền</h4>
+                      <h4 id="final-bill" class="customer-bill__final-value">
+                        <span class="customer-bill__final-value-bill" data-value="<%= tour.price %>">
+                          <%= Intl.NumberFormat('vi-VN').format(tour.price) %>
+                        </span>
+                       &#x20AB
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <button id="btn-submit__order">
+                  Đặt tour
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- Footer -->
+     <%- include('../partials/footerCustomer')%>
+     <!-- End Footer -->
+     <!-- Javascript -->
+     <%- include('../partials/baseScriptFE')%>
+     <script src="/js/orderCustomer.js"></script>
+    <script src="/js/components/headerLogin.js"></script>
+  </body>
+</html>

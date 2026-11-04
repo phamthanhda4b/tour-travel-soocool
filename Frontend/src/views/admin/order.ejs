@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Order</title>
+    <link rel="stylesheet" href="assets/css/orderAdmin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7769952fd3.js" crossorigin="anonymous"></script>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+    <div class="nav-bar-content">
+        <!-- Start menubar -->
+        <%- include('./menuBar.ejs') %>
+            <div class="order-admin">
+                <div class="order-admin-overview">
+                    <div class="overview-pendding">
+                        <!-- Hien thi don Dang cho xu ly -->
+                        <div class="pending-title-icon">
+                            <div class="pending-title">Đang chờ xử lý</div>
+                            <div class="pending-icon"><i class="fa-solid fa-hourglass-half" style="color: #74C0FC;"></i>
+                            </div>
+                        </div>
+                        <div class="pending-value"></div>
+                    </div>
+                    <div class="overview-pendding">
+                        <!-- Hien thi don Dang cho xu ly -->
+                        <div class="pending-title-icon">
+                            <div class="received-title">Đã tiếp nhận</div>
+                            <div class="received-icon"><i class="fa-solid fa-paper-plane" style="color: #FFD43B;"></i>
+                            </div>
+                        </div>
+                        <div class="received-value"></div>
+                    </div>
+                    <div class="overview-pendding">
+                        <!-- Hien thi don Dang cho xu ly -->
+                        <div class="pending-title-icon">
+                            <div class="completed-title">Đã hoàn thành</div>
+                            <div class="completed-icon"><i class="fa-solid fa-circle-check" style="color: #63E6BE;"></i>
+                            </div>
+                        </div>
+                        <div class="completed-value"></div>
+                    </div>
+                    <div class="overview-pendding">
+                        <!-- Hien thi don Dang cho xu ly -->
+                        <div class="pending-title-icon">
+                            <div class="canceled-title">Đã hủy</div>
+                            <div class="canceled-icon"><i class="fa-solid fa-ban" style="color: #e13737;"></i></div>
+                        </div>
+                        <div class="canceled-value"></div>
+                    </div>
+                </div>
+                <div class='order__admin--function'>
+                    <div class='action__search'>
+                        <span class='action__search--title'>Tìm kiếm</span>
+                        <input class='action__search--text' placeholder='Nhập mã đơn cần tìm' />
+                    </div>
+                    <div class='box__action--button'>
+                        <span class='box__action--title'>Xem đơn</span>
+                        <button class='action__button action__pendding' data-link="/voucher/add">
+                            <i class="fa-solid fa-hourglass-half" style="color: #ffffff;"></i> Đang chờ
+                        </button>
+                        <button class='action__button action__received' data-link="/voucher/modify">
+                            <i class="fa-solid fa-pen-to-square"></i> Đã tiếp nhận
+                        </button>
+                        <button class='action__button action__completed'>
+                            <i class="fa-solid fa-lock"></i> Hoàn thành
+                        </button>
+                        <button class='action__button action__canceled'>
+                            <i class="fa-solid fa-arrows-rotate"></i> Đã hủy
+                        </button>
+                    </div>
+                </div>
+                <div class="order-admin-table">
+                    <div class="table-header">
+                        <div class="table-header-data">Mã khách hàng</div>
+                        <div class="table-header-data">Mã đơn</div>
+                        <div class="table-header-data">Mã tour</div>
+                        <div class="table-header-data">Ngày đặt</div>
+                        <div class="table-header-data">Giá</div>
+                        <div class="table-header-data">Thao tác</div>
+                    </div>
+                    <div class="table-row-data">
+                        <div class="table-row">
+                            <div class="table-data">1</div>
+                            <div class="table-data">1</div>
+                            <div class="table-data">1</div>
+                            <div class="table-data">1</div>
+                            <div class="table-data"><button class="table-data-view"></button></div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <!-- Noi hien thi nut phan trang  -->
+                    </div>
+                </div>
+            </div>
+            <%- include('../partials/baseScript')%>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/js/orderAdmin.js"></script>
+</body>
+
+</html>

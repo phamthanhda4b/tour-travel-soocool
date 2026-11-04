@@ -1,0 +1,79 @@
+/* ========================================================
+   MODERN TRANSPORT ADMIN CSS - 3TV TRAVEL
+   ======================================================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Mulish', sans-serif !important;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.transport__admin {
+  width: 100% !important;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px 36px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+}
+
+.transport-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  text-align: left;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.transport__admin--table {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  width: 100%;
+}
+
+.transport__admin--table--header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8fafc !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  color: #475569 !important;
+  padding: 14px 18px !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.transport__admin--table--title {
+  text-align: center;
+  flex: 1;
+}
+
+.transport__admin--table--rows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  background-color: #ffffff;
+  transition: background-color 0.15s ease;
+}
+
+.transport__admin--table--rows:hover {
+  background-color: #f8fafc;
+}
+
+.transport__admin--table--data {
+  text-align: center;
+  flex: 1;
+  color: #1e293b;
+  font-size: 1.35rem;
+  font-weight: 500;
+}

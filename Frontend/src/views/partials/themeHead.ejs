@@ -1,0 +1,16 @@
+<!-- TourDL Dark / Light Mode Stylesheet & FOUC Prevention Script -->
+<link rel="stylesheet" href="/assets/css/dark-theme.css" />
+<script>
+  (function () {
+    try {
+      var savedTheme = localStorage.getItem('tourdl_theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>

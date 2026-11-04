@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+
+<head>
+
+  <title>Sửa Thông Tin Lịch Trình</title>
+
+  <%- include('../partials/head') %>
+
+    <link rel="stylesheet" href="/assets/css/tourAdd.css">
+
+    <link rel="stylesheet" href="/assets/css/index.css">
+
+</head>
+
+
+
+
+<body>
+
+  <div class="tour-crud">
+
+    <%- include('./menuBar.ejs') %>
+
+      <div class="tour__admin--add-form" id="addTourForm">
+
+        <h1>Sửa Thông Tin Lịch Trình</h1>
+
+        <form class="crudFrom">
+
+          <div class="lable_input">
+
+            <label class="from_lable" for="calendarId">ID Calendar:</label>
+
+            <input type="text" class="tour_input" id="calendarId" name="calendarId" readonly>
+
+          </div>
+
+          <div class="lable_input">
+
+            <label class="from_lable" for="dateStart">Ngày Khởi Hành:</label>
+
+            <input type="date" class="tour_input" id="dateStart" name="dateStart" required>
+
+        </div> 
+
+          <div class="lable_input">
+
+            <label class="from_lable" for="slot">Slot:</label>
+
+            <input type="number" class="tour_input" id="slot" name="slot" min="1" required>
+
+          </div>
+
+          <div class="form-button">
+
+            <button class="form-button-cancel" type="button" id="cancelAddTour">Hủy</button>
+
+            <button class="form-button-submit" type="submit">Lưu</button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <%- include('../partials/baseScript')%>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script src="/js/calendarModify.js"></script>
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,433 @@
+/* ========================================================
+   MODERN LUXURY CUSTOMER / USER ADMIN CSS - 3TV TRAVEL
+   ======================================================== */
+
+.user__admin {
+  width: 100% !important;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 1. Phần tổng quan chỉ số (Overview Cards) */
+.user__admin--overview {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  gap: 20px !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin-bottom: 24px !important;
+  border-radius: 0 !important;
+}
+
+.user__admin--report {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  padding: 22px 24px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  height: auto !important;
+  width: auto !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-left: 5px solid #0b5da7 !important;
+}
+
+.user__admin--report:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.user__admin--report:nth-child(2) {
+  border-left-color: #10b981 !important;
+}
+
+.user__admin--report:nth-child(3) {
+  border-left-color: #ef4444 !important;
+}
+
+.user__admin--report--title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 8px !important;
+}
+
+.user__admin--report--value {
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1.2 !important;
+}
+
+.user__admin--report:nth-child(1) .user__admin--report--value {
+  color: #0b5da7 !important;
+}
+.user__admin--report:nth-child(2) .user__admin--report--value {
+  color: #10b981 !important;
+}
+.user__admin--report:nth-child(3) .user__admin--report--value {
+  color: #ef4444 !important;
+}
+
+/* 2. Thanh công cụ & Chức năng tìm kiếm */
+.user__admin--function {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin: 0 0 24px 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 14px 20px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+  flex-wrap: wrap !important;
+}
+
+.action__search {
+  display: flex !important;
+  align-items: center !important;
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 8px 14px !important;
+  width: 360px !important;
+  max-width: 100% !important;
+  position: relative !important;
+  transition: all 0.2s ease !important;
+}
+
+.action__search:focus-within {
+  background: #ffffff !important;
+  border-color: #0b5da7 !important;
+  box-shadow: 0 0 0 3px rgba(11, 93, 167, 0.12) !important;
+}
+
+.action__search--title {
+  display: none !important;
+}
+
+.action__search--text {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-size: 1.35rem !important;
+  font-family: inherit !important;
+  color: #0f172a !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.action__search--text::placeholder {
+  color: #94a3b8 !important;
+}
+
+.box__action--button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  border: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  background: transparent !important;
+}
+
+.box__action--title {
+  display: none !important;
+}
+
+.action__button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 9px 18px !important;
+  border-radius: 8px !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+  font-family: inherit !important;
+  width: auto !important;
+}
+
+.action__refresh {
+  background: #ffffff !important;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+.action__refresh:hover {
+  background: #f1f5f9 !important;
+  color: #0b5da7 !important;
+  border-color: #0b5da7 !important;
+}
+
+.action__look {
+  background: #fef2f2 !important;
+  color: #dc2626 !important;
+  border: 1px solid #fecaca !important;
+}
+
+.action__look:hover {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25) !important;
+}
+
+/* 3. Bảng quản lý người dùng (Data Table) */
+.user__admin--table {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  overflow-x: auto !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  padding: 0 !important;
+  max-height: 650px !important;
+  width: 100% !important;
+}
+
+.user__admin--table::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.user__admin--table::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.user__admin--table--header {
+  background: #f8fafc !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 5 !important;
+  border-radius: 0 !important;
+}
+
+.user__admin--table--body {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 250px !important;
+}
+
+/* Hỗ trợ cả .user__admin--table--row VÀ .user__admin--table--rows */
+.user__admin--table--header,
+.user__admin--table--row,
+.user__admin--table--rows {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  padding: 13px 18px !important;
+  gap: 12px !important;
+}
+
+.user__admin--table--row,
+.user__admin--table--rows {
+  background: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.user__admin--table--row:hover,
+.user__admin--table--rows:hover {
+  background-color: #f8fafc !important;
+}
+
+.user__admin--table--row:nth-child(even),
+.user__admin--table--rows:nth-child(even) {
+  background-color: #ffffff !important;
+}
+.user__admin--table--row:nth-child(even):hover,
+.user__admin--table--rows:nth-child(even):hover {
+  background-color: #f8fafc !important;
+}
+
+/* Định dạng các cột dữ liệu theo thứ tự */
+.user__admin--table--title,
+.user__admin--table--data {
+  box-sizing: border-box !important;
+  padding: 0 6px !important;
+}
+
+.user__admin--table--title {
+  color: #475569 !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  white-space: nowrap !important;
+}
+
+.user__admin--table--data {
+  color: #1e293b !important;
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* Cột 1: Radio button */
+.user__admin--table--title:nth-child(1),
+.user__admin--table--data:nth-child(1) {
+  width: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* Cột 2: ID */
+.user__admin--table--title:nth-child(2),
+.user__admin--table--data:nth-child(2) {
+  width: 55px !important;
+  min-width: 55px !important;
+  max-width: 55px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+}
+
+/* Cột 3: Tên tài khoản */
+.user__admin--table--title:nth-child(3),
+.user__admin--table--data:nth-child(3) {
+  width: 15% !important;
+  min-width: 110px !important;
+  text-align: left !important;
+  flex-shrink: 0 !important;
+  font-weight: 600 !important;
+}
+
+/* Cột 4: Tên đầy đủ */
+.user__admin--table--title:nth-child(4),
+.user__admin--table--data:nth-child(4) {
+  width: 16% !important;
+  min-width: 120px !important;
+  text-align: left !important;
+  flex-shrink: 0 !important;
+}
+
+/* Cột 5: Email */
+.user__admin--table--title:nth-child(5),
+.user__admin--table--data:nth-child(5) {
+  flex: 1 !important;
+  min-width: 170px !important;
+  text-align: left !important;
+}
+
+/* Cột 6: Số điện thoại */
+.user__admin--table--title:nth-child(6),
+.user__admin--table--data:nth-child(6) {
+  width: 125px !important;
+  min-width: 125px !important;
+  max-width: 125px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* Cột 7: Địa chỉ */
+.user__admin--table--title:nth-child(7),
+.user__admin--table--data:nth-child(7) {
+  width: 20% !important;
+  min-width: 140px !important;
+  text-align: left !important;
+}
+
+/* Dòng bị khóa */
+.user__admin--table--row.locked,
+.user__admin--table--rows.locked,
+.user__admin--table--rows--disable {
+  background-color: #fff1f2 !important;
+  color: #9f1239 !important;
+}
+
+.user__admin--table--row.locked .user__admin--table--data,
+.user__admin--table--data.locked-column {
+  color: #be123c !important;
+  font-weight: 600 !important;
+}
+
+/* Checkbox & Radio */
+input[type="radio"],
+input[type="checkbox"] {
+  width: 17px !important;
+  height: 17px !important;
+  accent-color: #0b5da7 !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+}
+
+/* Tin nhắn trống */
+.empty-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #64748b;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* 4. Phân trang (Pagination) */
+.pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 24px !important;
+  padding-bottom: 20px !important;
+}
+
+.pagination button {
+  min-width: 38px !important;
+  height: 38px !important;
+  padding: 0 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  background: #ffffff !important;
+  color: #475569 !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: inherit !important;
+}
+
+.pagination button:hover:not([disabled]) {
+  background: #f8fafc !important;
+  color: #0b5da7 !important;
+  border-color: #0b5da7 !important;
+  transform: translateY(-1px) !important;
+}
+
+.pagination button.active {
+  background: #0b5da7 !important;
+  color: #ffffff !important;
+  border-color: #0b5da7 !important;
+  box-shadow: 0 2px 8px rgba(11, 93, 167, 0.3) !important;
+}
+
+.pagination button:disabled {
+  background: #f8fafc !important;
+  color: #cbd5e1 !important;
+  border-color: #f1f5f9 !important;
+  cursor: not-allowed !important;
+}

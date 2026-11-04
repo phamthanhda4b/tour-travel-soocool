@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Quản lý Tour</title>
+  <link rel="stylesheet" href="assets/css/tour.css">
+  <%- include('../partials/head') %>
+</head>
+
+<body>
+  <div class="nav-bar-content">
+    <!-- Start menubar -->
+    <%- include('./menuBar.ejs') %>
+      <div class="voucher__admin">
+        <div class='voucher__admin--overview'>
+          <div class='voucher__admin--report'>
+            <div class='voucher__admin--report--title'>Tổng số Tour</div>
+            <div class='voucher__admin--report--value total-tour'></div>
+          </div>
+          <div class='voucher__admin--report'>
+            <div class='voucher__admin--report--title'>Tiết Kiệm</div>
+            <div class='voucher__admin--report--value total-tk'></div>
+          </div>
+          <div class='voucher__admin--report'>
+            <div class='voucher__admin--report--title'>Tiêu Chuẩn</div>
+            <div class='voucher__admin--report--value total-tc'></div>
+          </div>
+          <div class='voucher__admin--report'>
+            <div class='voucher__admin--report--title'>Giá Tốt</div>
+            <div class='voucher__admin--report--value total-gt'></div>
+          </div>
+          <div class='voucher__admin--report'>
+            <div class='voucher__admin--report--title'>Cao Cấp</div>
+            <div class='voucher__admin--report--value total-cc'></div>
+          </div>
+          
+        </div>
+        <div class='voucher__admin--function'>
+          <div class='action__search'>
+            <span class='action__search--title'>Tìm kiếm</span>
+            <input class='action__search--text' placeholder='Nhập mã tour cần tìm' />
+          </div>
+          <div class='box__action--button'>
+            <span class='box__action--title' >Hành động</span>
+            <button class='action__button action__add' data-link="/tour/add">
+              <FontAwesomeIcon icon={faPlus}/> Thêm mới
+            </button>
+            <button class='action__button action__lock' data-link="/tour/modify">
+              <FontAwesomeIcon icon={faPenToSquare} /> Sửa
+            </button>
+            <button class='action__button action__adddetail' data-link="/tour/detail">
+              <FontAwesomeIcon icon={faLock} /> Cập nhật chi tiết
+            </button>
+            <button class='action__button action__delete' data-link="/tour/calendar">
+              <FontAwesomeIcon icon={faLock} /> Cập nhật lịch
+            </button>
+            <button class='action__button action__remove'>
+              <FontAwesomeIcon icon={faLock} /> Xóa
+            </button>
+          </div>
+        </div>
+        <div class="voucher__admin--table">
+          <div class="voucher__admin--table--header">
+            <div class="voucher__admin--table--title"></div>
+            <div class="voucher__admin--table--title">Mã Tour</div>
+            <div class="voucher__admin--table--title">Tên Tour</div>
+            <div class="voucher__admin--table--title">Hình Ảnh</div>
+            <div class="voucher__admin--table--title">Giá Tour</div>
+            <div class="voucher__admin--table--title">Điểm Khởi Hành</div>
+            <div class="voucher__admin--table--title">Điểm Đến</div>
+            <div class="voucher__admin--table--title">Phương Tiện</div>
+            <div class="voucher__admin--table--title">Loại Tour</div>
+
+          </div>
+          <div class='voucher__admin--table--body'>
+          </div>
+          <div class="button--page">
+            <button class="prev">&#8592; Trang tr&#432;&#7899;c</button>
+            <div class="numberPage"></div>
+            <button class="next">Trang sau &#8594;</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <%- include('../partials/baseScript')%>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="/js/tour.js"></script>
+</body>
+
+</html>

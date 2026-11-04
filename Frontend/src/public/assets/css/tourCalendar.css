@@ -1,0 +1,127 @@
+/* ========================================================
+   MODERN TOUR CALENDAR ADMIN CSS - 3TV TRAVEL
+   ======================================================== */
+
+.tour-crud {
+  display: flex !important;
+  width: 100% !important;
+  flex: 1 !important;
+  background-color: #f8fafc !important;
+  min-height: 100vh !important;
+}
+
+.tour__admin--add-form {
+  width: 100% !important;
+  padding: 30px !important;
+  box-sizing: border-box !important;
+}
+
+body {
+  font-family: 'Mulish', sans-serif !important;
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+h1 {
+  text-align: center;
+  margin: 10px 0 25px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.tour__admin--table {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  padding: 0 !important;
+  margin-top: 20px !important;
+}
+
+.tour__admin--table--header {
+  background: #f8fafc !important;
+  border: none !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  padding: 14px 18px !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 5 !important;
+}
+
+.tour__admin--table--body {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border: none !important;
+}
+
+.tour__admin--table--header,
+.tour__admin--table--rows {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  box-sizing: border-box !important;
+  border: none !important;
+}
+
+.tour__admin--table--rows {
+  background: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  padding: 12px 18px !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.tour__admin--table--rows:hover {
+  background-color: #f8fafc !important;
+}
+
+.tour__admin--table--rows:nth-child(even) {
+  background-color: #ffffff !important;
+}
+
+.tour__admin--table--title {
+  color: #475569 !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  text-align: center !important;
+}
+
+.tour__admin--table--data {
+  color: #1e293b !important;
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+}
+
+.tour__admin--function {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  margin-top: 20px !important;
+}
+
+.action__button {
+  padding: 9px 18px !important;
+  border-radius: 8px !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  border: none !important;
+  font-family: inherit !important;
+  background: linear-gradient(135deg, #0b5da7 0%, #0284c7 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(11, 93, 167, 0.3) !important;
+}
+
+.action__button:hover {
+  background: linear-gradient(135deg, #084379 0%, #0369a1 100%) !important;
+}

@@ -1,0 +1,61 @@
+<div id="nav-bar">
+  <div id="nav-header">
+    <img
+      src="/assets/image/logo/logo-header.png"
+      class="admin__logo"
+      alt="3TV Travel Logo"
+    />
+    <span class="admin__badge">ADMIN PORTAL</span>
+  </div>
+  <div id="nav-content">
+    <div class="nav-button nav__link" data-link="/dashboard">
+      <i class="fas fa-chart-line" style="pointer-events: none"></i>
+      <span style="pointer-events: none">Tổng quan</span>
+    </div>
+    <div class="nav-button nav__link" data-link="/customer">
+      <i class="fas fa-users" style="pointer-events: none"></i>
+      <span style="pointer-events: none">Người dùng</span>
+    </div>
+    <div class="nav-button nav__link" data-link="/voucher">
+      <i class="fas fa-ticket" style="pointer-events: none"></i>
+      <span style="pointer-events: none">Voucher</span>
+    </div>
+    <div class="nav-button nav__link" data-link="/tour">
+      <i class="fas fa-earth-americas" style="pointer-events: none"></i>
+      <span style="pointer-events: none">Tour</span>
+    </div>
+    <div class="nav-button nav__link" data-link="/admin-order">
+      <i class="fas fa-plane-departure" style="pointer-events: none"></i>
+      <span style="pointer-events: none">Order</span>
+    </div>
+    <div class="nav-button nav__link" data-link="/admin/slides">
+      <i class="fas fa-images" style="pointer-events: none"></i>
+      <span style="pointer-events: none">Banner Slide</span>
+    </div>
+  </div>
+  <div id="nav-footer">
+    <div id="nav-footer-heading">
+      <div id="nav-footer-avatar">
+        <img src="/assets/image/logo/logo-admin.png" alt="Admin Avatar" />
+      </div>
+      <div id="nav-footer-titlebox">
+        <span id="nav-footer-title">Administrator</span>
+        <span id="nav-footer-subtitle">Quản trị viên</span>
+      </div>
+    </div>
+    <div id="nav-footer-content">
+      <button id="theme-toggle-btn-admin" class="nav-button-theme theme-toggle-btn" type="button" aria-label="Chuyển chế độ sáng/tối" title="Chuyển sang chế độ tối">
+        <span class="theme-toggle-track">
+          <span class="theme-toggle-thumb">
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>
+          </span>
+        </span>
+        <span class="theme-label">Chế độ tối</span>
+      </button>
+      <button id="admin-logout-btn" class="nav-button-logout header__infor-item logout" onclick="if(window.handleLogout){window.handleLogout(event);}else{window.location.href='/login';}">
+        <i class="fas fa-sign-out-alt"></i> <span>Đăng xuất</span>
+      </button>
+    </div>
+  </div>
+</div>

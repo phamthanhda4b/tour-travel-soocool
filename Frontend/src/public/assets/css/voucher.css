@@ -1,0 +1,345 @@
+/* ========================================================
+   MODERN LUXURY VOUCHER ADMIN CSS - 3TV TRAVEL
+   ======================================================== */
+
+.voucher__admin {
+  width: 100% !important;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 1. Phần tổng quan chỉ số (Overview Cards) */
+.voucher__admin--overview {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  gap: 20px !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin-bottom: 24px !important;
+}
+
+.voucher__admin--report {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  padding: 22px 24px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  height: auto !important;
+  width: auto !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-left: 5px solid #0b5da7 !important;
+}
+
+.voucher__admin--report:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.voucher__admin--report:nth-child(2) { border-left-color: #ef4444 !important; }
+.voucher__admin--report:nth-child(3) { border-left-color: #10b981 !important; }
+
+.voucher__admin--report--title--icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-bottom: 12px !important;
+}
+
+.voucher__admin--report--title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.div__icon__report--total,
+.div__icon__report--expiry,
+.div__icon__report--open {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.6rem !important;
+}
+
+.div__icon__report--total {
+  background: #eff6ff !important;
+}
+.div__icon__report--expiry {
+  background: #fef2f2 !important;
+}
+.div__icon__report--open {
+  background: #ecfdf5 !important;
+}
+
+.voucher__admin--report--value {
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1.2 !important;
+}
+
+/* 2. Thanh tìm kiếm & Hành động */
+.voucher__admin--function {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin: 0 0 24px 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 14px 20px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+.action__search {
+  display: flex !important;
+  align-items: center !important;
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 8px 14px !important;
+  width: 340px !important;
+  max-width: 100% !important;
+  position: relative !important;
+  transition: all 0.2s ease !important;
+}
+
+.action__search:focus-within {
+  background: #ffffff !important;
+  border-color: #0b5da7 !important;
+  box-shadow: 0 0 0 3px rgba(11, 93, 167, 0.12) !important;
+}
+
+.action__search--title {
+  display: none !important;
+}
+
+.action__search--text {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-size: 1.35rem !important;
+  font-family: inherit !important;
+  color: #0f172a !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.action__search--text::placeholder {
+  color: #94a3b8 !important;
+}
+
+.box__action--button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  border: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  background: transparent !important;
+}
+
+.box__action--title {
+  display: none !important;
+}
+
+.action__button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 9px 16px !important;
+  border-radius: 8px !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid #cbd5e1 !important;
+  font-family: inherit !important;
+  width: auto !important;
+  background: #ffffff !important;
+  color: #334155 !important;
+}
+
+.action__button:hover {
+  background: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+}
+
+.action__add {
+  background: linear-gradient(135deg, #0b5da7 0%, #0284c7 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(11, 93, 167, 0.3) !important;
+}
+
+.action__add:hover {
+  background: linear-gradient(135deg, #084379 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(11, 93, 167, 0.4) !important;
+}
+
+.action__remove {
+  background: #fef2f2 !important;
+  color: #dc2626 !important;
+  border-color: #fecaca !important;
+}
+
+.action__remove:hover {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  border-color: #dc2626 !important;
+}
+
+/* 3. Bảng dữ liệu Voucher */
+.voucher__admin--table {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  padding: 0 !important;
+  max-height: 650px !important;
+}
+
+.voucher__admin--table::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.voucher__admin--table::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.voucher__admin--table--header {
+  background: #f8fafc !important;
+  border: none !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  padding: 14px 18px !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 5 !important;
+  border-radius: 0 !important;
+}
+
+.voucher__admin--table--body {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 250px !important;
+}
+
+.voucher__admin--table--header,
+.voucher__admin--table--rows {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  box-sizing: border-box !important;
+}
+
+.voucher__admin--table--rows {
+  background: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  padding: 13px 18px !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.voucher__admin--table--rows:hover {
+  background-color: #f8fafc !important;
+}
+
+.voucher__admin--table--rows:nth-child(even) {
+  background-color: #ffffff !important;
+}
+.voucher__admin--table--rows:nth-child(even):hover {
+  background-color: #f8fafc !important;
+}
+
+.voucher__admin--table--title {
+  color: #475569 !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.voucher__admin--table--data {
+  color: #1e293b !important;
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.voucher__admin--table--title:nth-child(1),
+.voucher__admin--table--data:nth-child(1) {
+  width: 40px !important;
+  flex-shrink: 0 !important;
+}
+
+.voucher__admin--table--title,
+.voucher__admin--table--data {
+  width: calc((100% - 40px) / 6) !important;
+}
+
+.voucher__admin--table--rows--disable {
+  background-color: #fff1f2 !important;
+  color: #9f1239 !important;
+  opacity: 1 !important;
+}
+
+/* Phân trang */
+.pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 24px !important;
+  padding-bottom: 20px !important;
+}
+
+.pagination button {
+  min-width: 38px !important;
+  height: 38px !important;
+  padding: 0 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  background: #ffffff !important;
+  color: #475569 !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-family: inherit !important;
+}
+
+.pagination button:hover:not([disabled]) {
+  background: #f8fafc !important;
+  color: #0b5da7 !important;
+  border-color: #0b5da7 !important;
+}
+
+.pagination button.active {
+  background: #0b5da7 !important;
+  color: #ffffff !important;
+  border-color: #0b5da7 !important;
+  box-shadow: 0 2px 8px rgba(11, 93, 167, 0.3) !important;
+}

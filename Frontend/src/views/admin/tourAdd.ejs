@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Thêm mới tour</title>
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/assets/css/tourAdd.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+</head>
+
+<body>
+  <div class="tour-crud">
+    <%- include('./menuBar.ejs') %>
+      <div class="tour__admin--add-form" id="addTourForm">
+        <h1>Thêm Mới Tour</h1>
+        <form class="crudFrom">
+          <div class="lable_input">
+            <label class="from_lable" for="tourId">ID Tour:</label>
+            <input type="text" class="tour_input" id="tourId" name="tourId" readonly>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="tourName">Tên Tour:</label>
+            <input type="text" class="tour_input" id="tourName" name="tourName" required>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="tourImage">Hình ảnh:</label>
+            <input type="text" class="tour_input" id="tourIamge" name="tourImage" placeholder="Dán Link Ảnh vào đây" required>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="tourPrice">Giá:</label>
+            <input type="number" class="tour_input" id="tourPrice" name="tourPrice" min="1" required>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="tourTime">Thời Gian:</label>
+            <select class="tour-input">
+              <option value="1">2N1D</option>
+              <option value="2">3N2D</option>
+              <option value="3">4N3D</option>
+              <option value="4">5N4D</option>
+              <option value="5">6N5D</option>
+              <option value="6">7N6D</option>
+            </select>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="tourStartPoint">Điểm Khởi Hành:</label>
+            <select class="tour_input" id="tourStartPoint" name="tourStartPoint" required>
+                <option value="">Chọn điểm khởi hành</option>
+            </select>
+        </div>
+        
+        <div class="lable_input">
+            <label class="from_lable" for="tourEndPoint">Điểm Đến:</label>
+            <select class="tour_input" id="tourEndPoint" name="tourEndPoint" required>
+                <option value="">Chọn điểm đến</option>
+            </select>
+        </div>
+          <div class="lable_input">
+            <label class="from_lable" for="tourTransport">Phương Tiện:</label>
+            <select class="tour-input-transport">
+              <option value="1">Xe Máy</option>
+              <option value="2">Máy Bay</option>
+            </select>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="tourType">Loại Tour:</label>
+            <select class="tour-input-type">
+              <option value="1">Tiết kiệm</option>
+              <option value="2">Giá tốt</option>
+              <option value="3">Tiêu chuẩn</option>
+              <option value="4">Cao cấp</option>
+            </select>
+          </div>
+          <div class="form-button">
+            <button class="form-button-cancel" type="button" id="cancelAddTour">Hủy</button>
+            <button class="form-button-submit" type="submit">Lưu</button>
+          </div>
+        </form>
+      </div>
+      <%- include('../partials/baseScript')%>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/tourAdd.js"></script>
+</body>
+
+</html>

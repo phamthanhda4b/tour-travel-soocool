@@ -1,0 +1,179 @@
+<!-- Google Fonts: Mulish (Phong cách Vietravel / travel.com.vn) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Link CSS Cho Thanh Header Menu -->
+<link rel="stylesheet" href="/assets/css/headerNav.css" />
+
+<header id="header" class="header">
+  <div class="header__container grid wide">
+    <div class="header__content">
+      <!-- 1. BÊN TRÁI: LOGO & MENU ĐIỀU HƯỚNG -->
+      <div class="header__left">
+        <div class="header__logo">
+          <a href="/" class="header__logo-link" title="3TV Travel - Về trang chủ">
+            <img
+              src="/assets/image/logo/logo-header.png"
+              alt="3TV Travel Logo"
+              class="image__logo"
+              onerror="this.src='/assets/image/logo/travelling.png'"
+            />
+          </a>
+        </div>
+
+        <ul class="header__nav">
+          <!-- Tour Trong Nước (Dropdown) -->
+          <li class="header__nav-item">
+            <a href="/#tours-section" class="header__nav-link">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>Tour Trong Nước</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="header__dropdown">
+              <div class="header__dropdown-header">Miền Bắc & Tây Bắc</div>
+              <a href="/?destination=Sapa#tours-section" class="header__dropdown-item">
+                <span>Sa Pa - Fansipan</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+              <a href="/?destination=Hạ Long#tours-section" class="header__dropdown-item">
+                <span>Vịnh Hạ Long</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+              <a href="/?destination=Hà Giang#tours-section" class="header__dropdown-item">
+                <span>Hà Giang - Mèo Vạc</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+
+              <div class="header__dropdown-divider"></div>
+              <div class="header__dropdown-header">Miền Trung & Biển</div>
+              <a href="/?destination=Đà Nẵng#tours-section" class="header__dropdown-item">
+                <span>Đà Nẵng - Hội An</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+              <a href="/?destination=Phan Thiết#tours-section" class="header__dropdown-item">
+                <span>Phan Thiết - Mũi Né</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+
+              <div class="header__dropdown-divider"></div>
+              <div class="header__dropdown-header">Miền Nam & Đảo Ngọc</div>
+              <a href="/?destination=Phú Quốc#tours-section" class="header__dropdown-item">
+                <span>Đảo Ngọc Phú Quốc</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+              <a href="/?destination=Miền Tây#tours-section" class="header__dropdown-item">
+                <span>Miền Tây Sông Nước</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+            </div>
+          </li>
+
+          <!-- Tour Quốc Tế (Dropdown) -->
+          <li class="header__nav-item">
+            <a href="/#tours-section" class="header__nav-link">
+              <i class="fa-solid fa-globe"></i>
+              <span>Tour Quốc Tế</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="header__dropdown">
+              <div class="header__dropdown-header">Châu Á Nổi Bật</div>
+              <a href="/?destination=Thái Lan#tours-section" class="header__dropdown-item">
+                <span>Thái Lan: Bangkok - Pattaya</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+              <a href="/?destination=Singapore#tours-section" class="header__dropdown-item">
+                <span>Singapore - Malaysia</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+              <a href="/?destination=Nhật Bản#tours-section" class="header__dropdown-item">
+                <span>Nhật Bản - Mùa Hoa Anh Đào</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+              <a href="/?destination=Trung Quốc#tours-section" class="header__dropdown-item">
+                <span>Trung Quốc: Phượng Hoàng Cổ Trấn</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+              <a href="/?destination=Dubai#tours-section" class="header__dropdown-item">
+                <span>Dubai - Thành phố tương lai</span>
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+            </div>
+          </li>
+
+          <!-- Khuyến Mãi (HOT) -->
+          <li class="header__nav-item">
+            <a href="/#tours-section" class="header__nav-link" title="Ưu đãi & Voucher">
+              <i class="fa-solid fa-fire" style="color: #ef4444;"></i>
+              <span>Khuyến Mãi</span>
+              <span class="header__hot-badge">HOT</span>
+            </a>
+          </li>
+
+          <!-- Tour Đã Đặt: Mặc định ẩn, chỉ hiển thị khi đã đăng nhập -->
+          <li class="header__nav-item is-hidden" id="header-nav-my-orders" style="display: none;">
+            <a href="/my-orders" class="header__nav-link header__nav-link--orders" title="Lịch sử đơn đặt tour của tôi">
+              <i class="fa-solid fa-suitcase-rolling"></i>
+              <span>Tour đã đặt</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. BÊN PHẢI: TÌM KIẾM, HOTLINE, NÚT DARKMODE & TÀI KHOẢN -->
+      <div class="header__right">
+        <!-- Ô Tìm kiếm nhanh -->
+        <div class="header__search" title="Tìm kiếm tour hoặc điểm đến">
+          <input
+            type="text"
+            id="header-search-input"
+            class="header__search-input"
+            placeholder="Tìm tour, điểm đến..."
+            autocomplete="off"
+          />
+          <button type="button" id="header-search-btn" class="header__search-btn" aria-label="Tìm kiếm">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <!-- Hotline tư vấn nhanh -->
+        <a href="tel:0912345678" class="header__hotline" title="Gọi Hotline 24/7">
+          <div class="header__hotline-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="header__hotline-info">
+            <span class="header__hotline-label">Hotline</span>
+            <span class="header__hotline-number">0912 345 678</span>
+          </div>
+        </a>
+
+        <!-- Nút chuyển đổi chế độ Sáng / Tối (Dark/Light Mode) -->
+        <button
+          id="theme-toggle-btn"
+          class="theme-toggle-btn"
+          type="button"
+          aria-label="Chuyển chế độ sáng/tối"
+          title="Chuyển sang chế độ tối"
+        >
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb">
+              <i class="fa-solid fa-sun icon-sun"></i>
+              <i class="fa-solid fa-moon icon-moon"></i>
+            </span>
+          </span>
+        </button>
+
+        <!-- Nút Đăng nhập / Đăng ký (hoặc Avatar nếu đã đăng nhập) -->
+        <div class="header__button">
+          <a href="/login" class="button__link">Đăng nhập</a>
+          <a href="/register" class="button__link">Đăng ký</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script src="/js/components/headerNav.js"></script>

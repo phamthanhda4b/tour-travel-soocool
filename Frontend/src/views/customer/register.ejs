@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link css -->
+    <link rel="stylesheet" href="/assets/css/register.css">
+    <link rel="stylesheet" href="/assets/css/grid.css">
+    <!-- end link css -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Đăng ký tài khoản</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header__container grid wide">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="/" class="header__logo-link">
+                        <img src="/assets/image/logo/logo-header.png" alt="logo" class="image__logo" />
+                    </a>
+                </div>
+                <!-- <div class="header__button">
+                    <a href="#" class="button button__link">Đăng nhập</a>
+                    <a href="#" class="button button__link">Đăng ký</a>
+                </div> -->
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <form class="form-content">
+        <h2 class="title-form">Đăng ký</h2>
+        <div class="form-value">
+            <div class="inputbox">
+                <label class="lb-content" for="username">Tên tài khoản</label> <br>
+                <input class="ip-cen" type="text" id="username" name="username" required
+                    placeholder="Nhập tên tài khoản">
+            </div>
+            <div class="inputbox">
+                <label class="lb-content" for="password">Mật khẩu</label> <br>
+                <div class="password-wrapper">
+                    <input class="ip-cen" type="password" id="password" name="password" required
+                        placeholder="Nhập mật khẩu">
+                    <ion-icon class="toggle-password" name="eye-off-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="inputbox">
+                <label class="lb-content" for="re-enter_password">Nhập lại</label> <br>
+                <div class="password-wrapper">
+                    <input class="ip-cen" type="password" id="re-enter_password" name="re-enter_password" required
+                        placeholder="Nhập lại mật khẩu">
+                    <ion-icon class="toggle-password" name="eye-off-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="inputbox">
+                <label class="lb-content" for="name">Họ tên</label> <br>
+                <input class="ip-cen" type="text" id="name" name="name" required placeholder="Nhập họ và tên">
+            </div>
+            <div class="inputbox">
+                <label class="lb-content" for="phone_number">Số điện thoại</label> <br>
+                <input class="ip-cen" type="text" id="phone_number" name="phone_number" required
+                    placeholder="Nhập số điện thoại">
+            </div>
+            <div class="inputbox">
+                <label class="lb-content" for="email">Email</label> <br>
+                <input class="ip-cen" type="email" id="email" name="email" required placeholder="Nhập email">
+            </div>
+            <div class="inputbox">
+                <label class="lb-content" for="tinh">Tỉnh Thành</label> <br>
+                <select class="ip-cen" id="tinh" name="tinh" title="Chọn Tỉnh Thành">
+                    <option value="0">Tỉnh Thành</option>
+                    <!-- Các tùy chọn tỉnh sẽ được thêm ở đây -->
+                </select>
+            </div>
+            <div class="inputbox">
+                <label class="lb-content" for="quan">Quận Huyện</label> <br>
+                <select class="ip-cen" id="quan" name="quan" title="Chọn Quận Huyện">
+                    <option value="0">Quận Huyện</option>
+                    <!-- Các tùy chọn quận sẽ được thêm ở đây -->
+                </select>
+            </div>
+            <div class="inputbox">
+                <label class="lb-content" for="phuong">Phường Xã</label> <br>
+                <select class="ip-cen" id="phuong" name="phuong" title="Chọn Phường Xã">
+                    <option value="0">Phường Xã</option>
+                    <!-- Các tùy chọn phường sẽ được thêm ở đây -->
+                </select>
+            </div>
+            <button class="btn-submit" type="submit">ĐĂNG KÝ</button>
+        </div>
+    </form>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="/js/register.js"></script>
+</body>
+
+</html>

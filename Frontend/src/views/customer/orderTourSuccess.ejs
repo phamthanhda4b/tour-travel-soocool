@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt tour</title>
+    <!-- Logo load -->
+    <link
+      rel="icon"
+      href="/assets/image/logo/logo-load.png"
+      type="image/icon type"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/grid.css" />
+    <link rel="stylesheet" href="/assets/css/home.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icon -->
+    <script
+      src="https://kit.fontawesome.com/7b9d660613.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Notification -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('../partials/headerCustomer')%>
+    <!-- End Header -->
+
+    <!-- Body content -->
+    <div class="orderpage">
+      <div class="grid wide orderpage__container">
+        <div class="row">
+          <div class="col l-12">
+            <div class="orderpage__header">
+              <h1 class="orderpage__header-title">Đặt tour</h1>
+              <div class="infor-step">
+                <!-- Item -->
+                <div class="infor-step__item">
+                  <span class="infor-step__item-icon"
+                    ><i class="fa-solid fa-file-pen"></i>
+                  </span>
+                  <p class="infor-step__item-title">Nhập thông tin</p>
+                </div>
+                <!-- Arrow -->
+                <div class="infor-step__item">
+                  <span class="infor-step__item-icon --arrow">
+                    <i class="fa-solid fa-right-long"></i>
+                  </span>
+                </div>
+                <!-- Item -->
+                <!-- <div class="infor-step__item">
+                  <span class="infor-step__item-icon">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                  </span>
+                  <p class="infor-step__item-title">Thanh toán</p>
+                </div> -->
+                <!-- Arrow -->
+                <!-- <div class="infor-step__item">
+                  <span class="infor-step__item-icon --arrow">
+                    <i class="fa-solid fa-right-long"></i>
+                  </span>
+                </div> -->
+                <!-- Item -->
+                <div class="infor-step__item active">
+                  <span class="infor-step__item-icon"
+                    ><i class="fa-solid fa-circle-check"></i>
+                  </span>
+                  <p class="infor-step__item-title">Đặt thành công</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col l-12">
+            <div class="thank-container">
+              <div class="image-container">
+                <img src="/assets/image/order/thank.png" alt="" />
+              </div>
+              <h4 class="text">Thank you!</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <%- include('../partials/footerCustomer')%>
+    <!-- End Footer -->
+    <!-- Javascript -->
+    <%- include('../partials/baseScriptFE')%>
+    <script>
+      let dataOrder = localStorage.getItem('dataOrderTour');
+      dataOrder = JSON.parse(dataOrder);
+      let callAPICreateOrder = async () => {
+        try {
+          await axios.post('/api/v1/tour-order', dataOrder);
+          localStorage.removeItem('dataOrderTour');
+        } catch (error) {
+          console.log(error);
+          alert('Lưu dữ liệu không thành công!');
+        }
+      };
+      callAPICreateOrder();
+       setTimeout(function () {
+        window.location.href = '/';
+      }, 3000);
+    </script>
+    <script src="/js/components/headerLogin.js"></script>
+  </body>
+</html>

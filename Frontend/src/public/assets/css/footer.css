@@ -1,0 +1,425 @@
+/* ========================================================
+   LIGHT MODERN TOURISM FOOTER - VIETRAVEL STYLE
+   3TV TRAVEL
+   ======================================================== */
+
+.site-footer {
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  font-family: 'Mulish', 'Roboto', sans-serif !important;
+  padding-top: 45px !important;
+  position: relative !important;
+  border-top: 1px solid #e2e8f0 !important;
+  margin-top: 50px !important;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* 1. Phần Logo & Slogan thương hiệu trên cùng */
+.footer-top-brand {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.footer-brand-logo-link {
+  display: inline-block;
+  height: 48px;
+}
+
+.footer-brand-logo-link img {
+  height: 100%;
+  max-width: 170px;
+  object-fit: contain;
+}
+
+.footer-brand-slogan {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b5da7;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* 2. Cột thông tin công ty (Cột 1) */
+.footer-company-name {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.footer-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 11px;
+  font-size: 1.25rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.footer-info-item i {
+  color: #64748b;
+  font-size: 1.35rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.footer-info-item a {
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-info-item a:hover {
+  color: #0b5da7;
+}
+
+/* Mạng xã hội: Theo dõi chúng tôi */
+.footer-social-wrapper {
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+
+.footer-social-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.footer-social-label i {
+  color: #64748b;
+}
+
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-social-icon:hover {
+  border-color: #0b5da7;
+  color: #0b5da7;
+  background-color: #f0f7ff;
+  transform: translateY(-2px);
+}
+
+.footer-social-icon.instagram:hover {
+  border-color: #e1306c;
+  color: #e1306c;
+  background-color: #fff0f5;
+}
+
+.footer-social-icon.facebook:hover {
+  border-color: #1877f2;
+  color: #1877f2;
+  background-color: #eff6ff;
+}
+
+.footer-social-icon.whatsapp:hover {
+  border-color: #25d366;
+  color: #25d366;
+  background-color: #f0fdf4;
+}
+
+.footer-social-icon.tiktok:hover {
+  border-color: #000000;
+  color: #000000;
+  background-color: #f8fafc;
+}
+
+.footer-social-icon.messenger:hover {
+  border-color: #0084ff;
+  color: #0084ff;
+  background-color: #eff6ff;
+}
+
+/* Nút Hotline Đỏ Pill - Phong cách Vietravel */
+.footer-hotline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+.footer-hotline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #e11d48 0%, #da251c 100%);
+  color: #ffffff !important;
+  padding: 8px 22px;
+  border-radius: 30px;
+  font-size: 1.45rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(218, 37, 28, 0.28);
+  transition: all 0.25s ease;
+  letter-spacing: 0.5px;
+}
+
+.footer-hotline-btn i {
+  font-size: 1.3rem;
+}
+
+.footer-hotline-btn:hover {
+  background: linear-gradient(135deg, #be123c 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(218, 37, 28, 0.35);
+  color: #ffffff !important;
+}
+
+.footer-hotline-note {
+  font-size: 1.15rem;
+  color: #64748b;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* 3. Tiêu đề các cột Menu */
+.footer-col-heading {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 16px;
+}
+
+.footer-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav-item {
+  margin-bottom: 10px;
+}
+
+.footer-nav-link {
+  font-size: 1.25rem;
+  color: #475569;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+  line-height: 1.5;
+}
+
+.footer-nav-link:hover {
+  color: #0b5da7;
+  transform: translateX(4px);
+  font-weight: 500;
+}
+
+/* 4. Cột 4: Chứng nhận & Chấp nhận thanh toán */
+.footer-cert-section {
+  margin-bottom: 22px;
+}
+
+.footer-cert-badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-cert-img {
+  height: 38px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.footer-cert-img:hover {
+  transform: scale(1.04);
+}
+
+/* Lưới thẻ thanh toán */
+.footer-payment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  max-width: 270px;
+}
+
+.payment-card {
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.payment-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Logo thẻ dạng CSS/SVG */
+.pay-logo-visa {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #1a1f71;
+  letter-spacing: -0.5px;
+}
+
+.pay-logo-verified {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a1f71;
+  line-height: 1;
+  text-align: center;
+}
+
+.pay-logo-mastercard {
+  display: flex;
+  align-items: center;
+}
+
+.pay-circle-red {
+  width: 14px;
+  height: 14px;
+  background-color: #eb001b;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: -6px;
+  z-index: 1;
+}
+
+.pay-circle-yellow {
+  width: 14px;
+  height: 14px;
+  background-color: #f79e1b;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pay-logo-vnpay {
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+.pay-logo-vnpay .vn { color: #005baa; }
+.pay-logo-vnpay .pay { color: #ed1c24; }
+
+.pay-logo-jcb {
+  font-size: 1.05rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #00368a 33%, #da291c 33%, #da291c 66%, #009344 66%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+.pay-logo-zalopay {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.pay-logo-zalopay .zalo { color: #0068ff; }
+.pay-logo-zalopay .pay { color: #00be00; }
+
+.pay-logo-amex {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #002663;
+  letter-spacing: 0.5px;
+}
+
+.pay-logo-momo {
+  background-color: #a50064;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 3px;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+/* 5. Thanh bản quyền dưới cùng */
+.footer-bottom-bar {
+  margin-top: 35px;
+  padding: 18px 0;
+  border-top: 1px solid #f1f5f9;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.footer-copyright-text {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer-copyright-text strong {
+  color: #334155;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .site-footer {
+    padding-top: 35px !important;
+  }
+  .footer-col-heading {
+    margin-top: 20px;
+  }
+  .footer-payment-grid {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top-brand {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-company-name {
+    text-align: center;
+  }
+  .footer-hotline-container {
+    align-items: center;
+  }
+  .footer-social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-cert-badges {
+    justify-content: center;
+  }
+  .footer-payment-grid {
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,280 @@
+/* ========================================================
+   MODERN LUXURY ADMIN DESIGN SYSTEM - 3TV TRAVEL
+   Sleek, Minimalist, Corporate Light Theme
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap');
+
+:root {
+  --admin-sidebar-bg: #ffffff;
+  --admin-sidebar-surface: #f8fafc;
+  --admin-sidebar-border: #e2e8f0;
+  --admin-sidebar-text: #475569;
+  --admin-sidebar-text-hover: #0b5da7;
+  
+  --admin-primary: #0b5da7;
+  --admin-primary-hover: #084379;
+  --admin-primary-light: #e0f2fe;
+  
+  --admin-bg: #f8fafc;
+  --admin-surface: #ffffff;
+  --admin-border: #e2e8f0;
+  --admin-border-subtle: #f1f5f9;
+  
+  --admin-text-main: #0f172a;
+  --admin-text-secondary: #334155;
+  --admin-text-muted: #64748b;
+  
+  --admin-radius: 10px;
+  --admin-radius-lg: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Mulish', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  background-color: var(--admin-bg) !important;
+  color: var(--admin-text-main);
+  min-height: 100vh;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+/* 1. Shell Layout */
+.nav-bar-content {
+  display: flex !important;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--admin-bg);
+}
+
+/* 2. Sidebar Navigation (Tone Sáng Tinh Tế Theo Yêu Cầu Của Bệ Hạ) */
+#nav-bar {
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  height: 100vh !important;
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  background-color: #ffffff !important;
+  border-right: 1px solid #e2e8f0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 0 !important;
+  z-index: 100 !important;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02) !important;
+  user-select: none;
+  font-family: 'Mulish', sans-serif !important;
+}
+
+/* Header thương hiệu Sidebar */
+#nav-header {
+  padding: 22px 20px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  background: #ffffff !important;
+  gap: 6px !important;
+}
+
+.admin__logo {
+  max-width: 150px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  filter: none !important; /* Giữ màu sắc thương hiệu tự nhiên */
+  opacity: 1 !important;
+  transition: opacity 0.2s ease;
+}
+
+.admin__badge {
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  color: #0b5da7 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* Danh sách Menu Sidebar */
+#nav-content {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 16px 12px !important;
+  direction: ltr !important;
+}
+
+#nav-content::-webkit-scrollbar {
+  width: 5px;
+}
+#nav-content::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.nav-button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 11px 16px !important;
+  margin-bottom: 6px !important;
+  border-radius: var(--admin-radius) !important;
+  color: #475569 !important;
+  font-size: 1.35rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: transparent !important;
+  height: auto !important;
+  border: none !important;
+}
+
+.nav-button i,
+.nav-button .fas,
+.nav-button .fa-solid {
+  font-size: 1.5rem !important;
+  width: 20px !important;
+  text-align: center !important;
+  color: #64748b !important;
+  transition: all 0.2s ease !important;
+}
+
+.nav-button:hover {
+  background-color: #f1f5f9 !important;
+  color: #0b5da7 !important;
+  transform: translateX(3px);
+}
+
+.nav-button:hover i,
+.nav-button:hover .fas,
+.nav-button:hover .fa-solid {
+  color: #0b5da7 !important;
+}
+
+/* Nút đang được chọn (Active) */
+.nav-button.checked {
+  background: linear-gradient(135deg, #0b5da7 0%, #0284c7 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(11, 93, 167, 0.3) !important;
+  transform: none !important;
+}
+
+.nav-button.checked i,
+.nav-button.checked .fas,
+.nav-button.checked .fa-solid {
+  color: #ffffff !important;
+}
+
+/* Footer Sidebar (Thông tin Admin & Nút Đăng xuất) */
+#nav-footer {
+  padding: 16px 14px 18px !important;
+  border-top: 1px solid #e2e8f0 !important;
+  background: #f8fafc !important;
+}
+
+#nav-footer-heading {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 12px !important;
+  background: #ffffff !important;
+  border-radius: var(--admin-radius) !important;
+  border: 1px solid #e2e8f0 !important;
+  margin-bottom: 12px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+#nav-footer-avatar {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 2px solid #0b5da7 !important;
+  flex-shrink: 0 !important;
+  background: #ffffff !important;
+}
+
+#nav-footer-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+#nav-footer-titlebox {
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+#nav-footer-title {
+  color: #0f172a !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+#nav-footer-subtitle {
+  color: #64748b !important;
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+}
+
+#nav-footer-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.nav-button-logout {
+  width: 100% !important;
+  padding: 9px 14px !important;
+  border-radius: var(--admin-radius) !important;
+  background: #fef2f2 !important;
+  color: #dc2626 !important;
+  border: 1px solid #fecaca !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  transition: all 0.2s ease !important;
+  font-family: inherit !important;
+}
+
+.nav-button-logout:hover {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  border-color: #dc2626 !important;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25) !important;
+}
+
+/* 3. Phần khung nội dung chính chung */
+.user__admin,
+.voucher__admin,
+.order-admin,
+.slide__admin,
+.tour-crud,
+.tour__admin,
+.main {
+  flex: 1 !important;
+  min-width: 0 !important;
+  padding: 28px 36px !important;
+  background-color: var(--admin-bg) !important;
+  box-sizing: border-box !important;
+  min-height: 100vh !important;
+  margin-left: 0 !important;
+  width: auto !important;
+  font-family: 'Mulish', sans-serif !important;
+}

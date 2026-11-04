@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chỉnh sửa Banner Slide #<%= slide.id %></title>
+  <%- include('../partials/head') %>
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet" href="/assets/css/slideAdmin.css">
+  <script src="https://kit.fontawesome.com/7769952fd3.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="nav-bar-content" style="display: flex;">
+    <%- include('./menuBar.ejs') %>
+
+    <div class="slide__admin">
+      <div class="slide__form--container">
+        <h2 class="slide__form--title">
+          <i class="fa-solid fa-pen-to-square"></i> Chỉnh Sửa Banner Slide #<%= slide.id %>
+        </h2>
+
+        <form id="modifySlideForm" data-id="<%= slide.id %>">
+          <!-- Title -->
+          <div class="form-group">
+            <label for="slideTitle">Tiêu đề slide <span style="color: red;">*</span></label>
+            <input type="text" id="slideTitle" name="title" class="form-control" value="<%= slide.title || '' %>" required>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label for="slideDesc">Mô tả / Slogan hiển thị trên slide</label>
+            <textarea id="slideDesc" name="description" class="form-control" rows="3"><%= slide.description || '' %></textarea>
+          </div>
+
+          <!-- Upload Option Tabs -->
+          <%
+            const isExternal = slide.image_url.startsWith('http://') || slide.image_url.startsWith('https://');
+          %>
+          <div class="form-group">
+            <label>Hình ảnh hiện tại & Tùy chọn thay đổi</label>
+            <div class="upload-type-tabs">
+              <div class="upload-tab <%= isExternal ? 'active' : '' %>" data-type="link">
+                <i class="fa-solid fa-link"></i> Dán đường link ảnh (URL)
+              </div>
+              <div class="upload-tab <%= !isExternal ? 'active' : '' %>" data-type="file">
+                <i class="fa-solid fa-laptop"></i> Tải ảnh từ máy tính
+              </div>
+            </div>
+
+            <!-- Pane Link -->
+            <div id="paneLink" class="upload-pane <%= isExternal ? 'active' : '' %>">
+              <input type="url" id="slideImageUrl" name="image_url" class="form-control" 
+                     value="<%= isExternal ? slide.image_url : '' %>" 
+                     placeholder="Dán link ảnh (https://...)" autocomplete="off">
+              <small style="color: #6c757d; display: block; margin-top: 6px;">
+                <i class="fa-solid fa-circle-info"></i> Để trống nếu muốn giữ nguyên ảnh hiện tại.
+              </small>
+            </div>
+
+            <!-- Pane File -->
+            <div id="paneFile" class="upload-pane <%= !isExternal ? 'active' : '' %>">
+              <div class="file-dropzone" id="dropzone">
+                <i class="fa-solid fa-image"></i>
+                <p><strong>Bấm vào đây để chọn ảnh mới</strong> hoặc kéo thả file ảnh vào đây</p>
+                <span>Hỗ trợ JPG, JPEG, PNG, WEBP (Tối đa 15MB)</span>
+                <input type="file" id="slideImageFile" name="image_file" accept="image/*" style="display: none;">
+              </div>
+            </div>
+
+            <!-- Image Live Preview -->
+            <div class="preview-box show" id="previewBox">
+              <img id="previewImg" src="<%= slide.image_url %>" alt="Xem trước ảnh">
+              <button type="button" class="preview-remove-btn" id="removePreviewBtn" title="Hủy ảnh mới">
+                <i class="fa-solid fa-rotate-left"></i>
+              </button>
+            </div>
+            <input type="hidden" id="originalImageUrl" value="<%= slide.image_url %>">
+          </div>
+
+          <!-- Link URL -->
+          <div class="form-group">
+            <label for="slideLink">Liên kết khi bấm vào slide</label>
+            <input type="text" id="slideLink" name="link_url" class="form-control" value="<%= slide.link_url || '/' %>">
+          </div>
+
+          <!-- Order Index & Status -->
+          <div style="display: flex; gap: 20px;">
+            <div class="form-group" style="flex: 1;">
+              <label for="slideOrder">Thứ tự ưu tiên hiển thị</label>
+              <input type="number" id="slideOrder" name="order_index" class="form-control" value="<%= slide.order_index %>" min="0">
+            </div>
+
+            <div class="form-group" style="flex: 1;">
+              <label for="slideStatus">Trạng thái hiển thị</label>
+              <select id="slideStatus" name="status" class="form-control">
+                <option value="1" <%= slide.status === 1 ? 'selected' : '' %>>Hiển thị (Active)</option>
+                <option value="0" <%= slide.status === 0 ? 'selected' : '' %>>Tạm ẩn (Inactive)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="form-buttons">
+            <a href="/admin/slides" class="btn-cancel">Hủy bỏ</a>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <i class="fa-solid fa-floppy-disk"></i> Cập Nhật Slide
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <%- include('../partials/baseScript') %>
+  <script src="/js/slideModify.js"></script>
+</body>
+</html>

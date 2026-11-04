@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Customer</title>
+  <link rel="stylesheet" href="assets/css/customer.css">
+  <!-- <link rel="stylesheet" href="assets/css/customerModify.css"> -->
+  <%- include('../partials/head') %>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div class="nav-bar-content">
+    <!-- Start menubar -->
+    <%- include('./menuBar.ejs') %>
+      <div class="user__admin">
+        <!-- Phần tổng quan -->
+        <div class='user__admin--overview'>
+          <div class='user__admin--report'>
+            <div class='user__admin--report--title'>Tổng số nguời dùng</div>
+            <div class='user__admin--report--value total-user'>0</div>
+          </div>
+          <div class='user__admin--report'>
+            <div class='user__admin--report--title'>Đang hoạt động</div>
+            <div class='user__admin--report--value active-user'>0</div>
+          </div>
+          <div class='user__admin--report'>
+            <div class='user__admin--report--title'>Đã bị khóa</div>
+            <div class='user__admin--report--value locked-user'>0</div>
+          </div>
+        </div>
+
+        <!-- Phần chức năng -->
+        <div class='user__admin--function'>
+          <div class='action__search'>
+            <span class='action__search--title'>Tìm kiếm</span>
+            <input class='action__search--text' placeholder='Nhập tên hoặc ID user cần tìm' />
+          </div>
+          <div class='box__action--button'>
+            <span class='box__action--title'>Hành động</span>
+            <button class='action__button action__look'>
+              <i class="fa-solid fa-lock"></i> Khóa
+            </button>
+            <button class='action__button action__refresh'>
+              <i class="fa-solid fa-arrows-rotate"></i> Làm mới
+            </button>
+          </div>
+        </div>
+
+        <!-- Phần bảng quản lý user -->
+        <div class="user__admin--table">
+          <div class="user__admin--table--header">
+            <div class="user__admin--table--title"></div>
+            <div class="user__admin--table--title">ID</div>
+            <div class="user__admin--table--title">Tên tài khoản</div>
+            <div class="user__admin--table--title">Tên</div>
+            <div class="user__admin--table--title">Email</div>
+            <div class="user__admin--table--title">Số điện thoại</div>
+            <div class="user__admin--table--title">Địa chỉ</div>
+          </div>
+          <div class='user__admin--table--body'>
+          </div>
+        </div>
+        <div class="pagination">
+          <!-- Noi hien thi nut phan trang  -->
+        </div>
+      </div>
+  </div>
+  <%- include('../partials/baseScript')%>
+    <script type="module" src="/js/customer.js"></script>
+</body>
+
+</html>

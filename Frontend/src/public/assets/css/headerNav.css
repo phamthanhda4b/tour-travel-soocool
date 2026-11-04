@@ -1,0 +1,573 @@
+﻿/* ========================================================
+   RICH HEADER NAVIGATION & SEARCH BAR - 3TV TRAVEL
+   ======================================================== */
+
+.header {
+  font-family: 'Mulish', 'Roboto', sans-serif !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.header .header__container {
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 12px !important;
+  box-sizing: border-box !important;
+}
+
+.header .header__container .header__content,
+.header__content {
+  padding: 6px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 1. Pháº§n bÃªn trÃ¡i: Logo & Menu Ä‘iá»u hÆ°á»›ng */
+.header__left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+.header .header__container .header__content .header__logo,
+.header__logo {
+  width: 120px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+}
+
+.header__logo .header__logo-link {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.header__logo .image__logo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+/* Danh sÃ¡ch Menu */
+.header__nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.header__nav-item {
+  position: relative !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.header__nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 5px 8px !important;
+  border-radius: 6px !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: transparent !important;
+  white-space: nowrap !important;
+}
+
+.header__nav-link i.fa-map-location-dot,
+.header__nav-link i.fa-globe,
+.header__nav-link i.fa-fire {
+  color: #0b5da7 !important;
+  font-size: 1.3rem !important;
+}
+
+.header__nav-link i.fa-chevron-down {
+  font-size: 0.9rem !important;
+  color: #94a3b8 !important;
+  transition: transform 0.25s ease !important;
+}
+
+.header__nav-link:hover {
+  background-color: #f0f7ff !important;
+  color: #0b5da7 !important;
+}
+
+.header__nav-item:hover .header__nav-link i.fa-chevron-down {
+  transform: rotate(180deg) !important;
+  color: #0b5da7 !important;
+}
+
+/* Huy hiá»‡u HOT cho Khuyáº¿n MÃ£i */
+.header__hot-badge {
+  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%) !important;
+  color: #ffffff !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1.1 !important;
+  box-shadow: 0 2px 5px rgba(239, 68, 68, 0.35) !important;
+  animation: hotBadgePulse 1.8s infinite !important;
+}
+
+@keyframes hotBadgePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* NÃºt Tour Ä‘Ã£ Ä‘áº·t */
+#header-nav-my-orders.is-hidden,
+#header-nav-my-orders[style*="display: none"] {
+  display: none !important;
+}
+
+.header__nav-link--orders {
+  background-color: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0b5da7 !important;
+  padding: 5px 8px !important;
+}
+
+.header__nav-link--orders i {
+  color: #0b5da7 !important;
+  font-size: 1.2rem !important;
+}
+
+.header__nav-link--orders:hover {
+  background-color: #0b5da7 !important;
+  color: #ffffff !important;
+  border-color: #0b5da7 !important;
+  box-shadow: 0 3px 10px rgba(11, 93, 167, 0.25) !important;
+}
+
+.header__nav-link--orders:hover i {
+  color: #ffffff !important;
+}
+
+/* Menu Dropdown xá»• xuá»‘ng cho Ä‘iá»ƒm Ä‘áº¿n */
+.header__dropdown {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  min-width: 250px !important;
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  padding: 8px 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(10px) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: none !important;
+  z-index: 1000 !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* VÃ¹ng Ä‘á»‡m Ä‘á»ƒ chuá»™t rÃª khÃ´ng bá»‹ máº¥t hover */
+.header__nav-item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 12px;
+}
+
+.header__nav-item:hover .header__dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+.header__dropdown-header {
+  padding: 6px 14px 3px !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #94a3b8 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.header__dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 7px 14px !important;
+  color: #334155 !important;
+  font-size: 1.3rem !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.header__dropdown-item:hover {
+  background-color: #f1f5f9 !important;
+  color: #0b5da7 !important;
+  padding-left: 18px !important;
+  font-weight: 600 !important;
+}
+
+.header__dropdown-item i {
+  font-size: 1.1rem !important;
+  color: #94a3b8 !important;
+  transition: transform 0.2s ease !important;
+}
+
+.header__dropdown-item:hover i {
+  color: #0b5da7 !important;
+  transform: translateX(3px) !important;
+}
+
+.header__dropdown-divider {
+  height: 1px !important;
+  background-color: #f1f5f9 !important;
+  margin: 5px 0 !important;
+}
+
+/* 2. Pháº§n bÃªn pháº£i: TÃ¬m kiáº¿m nhanh, Hotline, TÃ i khoáº£n */
+.header__right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Thanh tÃ¬m kiáº¿m nhanh */
+.header__search {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 20px !important;
+  padding: 2px 3px 2px 9px !important;
+  width: 130px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.header__search:focus-within {
+  width: 155px !important;
+  border-color: #0b5da7 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(11, 93, 167, 0.15) !important;
+}
+
+.header__search-input {
+  border: none !important;
+  background: transparent !important;
+  outline: none !important;
+  font-size: 1.15rem !important;
+  color: #1e293b !important;
+  width: 100% !important;
+  font-family: inherit !important;
+}
+
+.header__search-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.header__search-btn {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  background: #0b5da7 !important;
+  color: #ffffff !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-size: 1.05rem !important;
+  flex-shrink: 0 !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+}
+
+.header__search-btn:hover {
+  background: #084379 !important;
+  transform: scale(1.05) !important;
+}
+
+/* Huy hiá»‡u Hotline 24/7 */
+.header__hotline {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 3px 8px !important;
+  background: #ecfdf5 !important;
+  border: 1px solid #a7f3d0 !important;
+  border-radius: 16px !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.header__hotline:hover {
+  background: #d1fae5 !important;
+  border-color: #6ee7b7 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2) !important;
+}
+
+.header__hotline-icon {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 50% !important;
+  background: #10b981 !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.05rem !important;
+  flex-shrink: 0 !important;
+  animation: hotlineRing 2.5s infinite !important;
+}
+
+@keyframes hotlineRing {
+  0%, 100% { transform: rotate(0); }
+  10%, 30% { transform: rotate(-15deg); }
+  20%, 40% { transform: rotate(15deg); }
+  50% { transform: rotate(0); }
+}
+
+.header__hotline-info {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.1 !important;
+}
+
+.header__hotline-label {
+  font-size: 0.8rem !important;
+  color: #059669 !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}
+
+.header__hotline-number {
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  color: #065f46 !important;
+}
+
+/* Khá»‘i nÃºt Ä‘Äƒng nháº­p/Ä‘Äƒng kÃ½ */
+.header .header__container .header__content .header__button,
+.header__button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.header .header__container .header__content .header__button.hide,
+.header .header__button.hide,
+.header__button.hide {
+  display: none !important;
+}
+
+.header .header__container .header__content .header__button .button__link,
+.header__button .button__link {
+  display: inline-block !important;
+  padding: 5px 9px !important;
+  margin: 0 !important;
+  border-radius: 5px !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.header .header__container .header__content .header__button .button__link:first-child,
+.header__button .button__link:first-child {
+  background-color: transparent !important;
+  color: #0b5da7 !important;
+  border: 1px solid #0b5da7 !important;
+}
+
+.header .header__container .header__content .header__button .button__link:first-child:hover,
+.header__button .button__link:first-child:hover {
+  background-color: #0b5da7 !important;
+  color: #ffffff !important;
+}
+
+.header .header__container .header__content .header__button .button__link:last-child,
+.header__button .button__link:last-child {
+  background-color: #0b5da7 !important;
+  color: #ffffff !important;
+  border: 1px solid #0b5da7 !important;
+}
+
+.header .header__container .header__content .header__button .button__link:last-child:hover,
+.header__button .button__link:last-child:hover {
+  background-color: #084379 !important;
+  border-color: #084379 !important;
+}
+
+/* Khá»‘i thÃ´ng tin khÃ¡ch hÃ ng Ä‘Ã£ Ä‘Äƒng nháº­p */
+.header .header__container .header__content .header__infor-customer,
+.header__infor-customer {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  cursor: pointer !important;
+  padding: 3px 8px !important;
+  border-radius: 20px !important;
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  transition: all 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.header__infor-customer:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.header__infor-customer .icon {
+  font-size: 1.1rem !important;
+  width: 26px !important;
+  height: 26px !important;
+  padding: 0 !important;
+  background-color: #0b5da7 !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.header__infor-customer .header__infor-customer-name {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin: 0 6px !important;
+  max-width: 110px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.header__infor-customer .header__infor-customer-icon {
+  font-size: 1.1rem !important;
+  color: #64748b !important;
+  margin: 0 !important;
+}
+
+.header__infor-customer .header__infor-block {
+  min-width: 185px !important;
+  width: auto !important;
+  right: 0 !important;
+  top: calc(100% + 6px) !important;
+}
+
+/* Responsive Rules to guarantee NO horizontal overflow */
+@media (max-width: 1200px) {
+  .header__hotline-info {
+    display: none !important;
+  }
+  .header__hotline {
+    padding: 4px !important;
+    border-radius: 50% !important;
+  }
+  .header__search {
+    width: 115px !important;
+  }
+  .header__search:focus-within {
+    width: 135px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header__hotline {
+    display: none !important;
+  }
+  .header__nav-link {
+    padding: 4px 6px !important;
+    font-size: 1.2rem !important;
+    gap: 4px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .header__container .header__content {
+    flex-wrap: wrap !important;
+  }
+  .header__search {
+    display: none !important;
+  }
+}
+
+/* ========================================================
+   DARK MODE INTEGRATION FOR HEADER NAVIGATION
+   ======================================================== */
+html[data-theme='dark'] .header {
+  background-color: var(--theme-surface, #1e293b) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+  border-bottom: 1px solid var(--theme-border, #334155) !important;
+}
+html[data-theme='dark'] .header__nav-link {
+  color: var(--theme-text, #f1f5f9) !important;
+}
+html[data-theme='dark'] .header__nav-link:hover {
+  background-color: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+}
+html[data-theme='dark'] .header__dropdown {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+html[data-theme='dark'] .header__dropdown-header {
+  color: #94a3b8 !important;
+}
+html[data-theme='dark'] .header__dropdown-item {
+  color: #f1f5f9 !important;
+}
+html[data-theme='dark'] .header__dropdown-item:hover {
+  background-color: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+}
+html[data-theme='dark'] .header__search-input {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+html[data-theme='dark'] .header__infor-customer {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+}
+html[data-theme='dark'] .header__infor-customer-name {
+  color: #f8fafc !important;
+}
+

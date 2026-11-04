@@ -1,0 +1,612 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', 'Roboto', sans-serif;
+}
+
+html {
+    font-family: 'Mulish', 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    line-height: 1.6rem
+}
+
+a {
+    color: black;
+    text-decoration: none
+}
+
+ul {
+    list-style: none
+}
+
+
+/* header */
+.header {
+    background-color: white;
+    box-shadow: 0px -10px 15px 2px #595050;
+    z-index: 10
+}
+
+.header .header__container .header__content {
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+
+.header .header__container .header__content .header__logo {
+    height: 66.6666666667px;
+    width: 200px
+}
+
+.header .header__container .header__content .header__logo .header__logo-link {
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%
+}
+
+.header .header__container .header__content .header__logo .header__logo-link .image__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.header .header__container .header__content .header__button .button__link {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+    background-color: #0b5da7;
+    color: white;
+    cursor: pointer;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: bold
+}
+
+.header .header__container .header__content .header__button .button__link:hover {
+    color: #0b5da7;
+    background-color: #fff;
+    transition: 0.2s ease-in-out;
+    border: 1px solid #0b5da7
+}
+
+/* end header */
+
+
+/* container */
+.detailpage-main {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    /* Căn giữa nội dung */
+    padding: 1rem;
+    /* Thêm khoảng cách để nội dung không sát cạnh */
+    box-sizing: border-box;
+    /* Tính cả padding vào width */
+}
+
+/* tour header */
+.tour-header {
+    margin: auto;
+    padding: 0 1rem;
+    width: 80%;
+}
+
+.tour-header h2 {
+    font-size: 2.3rem;
+    margin: 1.7rem 0;
+    line-height: 4rem;
+}
+
+/* end tour header */
+
+/* tab visible */
+.tabs-detail {
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    margin-bottom: 1.5rem;
+    top: 0;
+    z-index: 3;
+    border: 1px solid f8f8f8;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .24);
+    transition: opacity .3s, visibility .3s;
+    opacity: 0;
+    /* Tabs hiển thị ban đầu */
+    visibility: visible;
+    /* Tabs hiển thị ban đầu */
+}
+
+.tabs-detail_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 79%;
+    margin: auto;
+}
+
+.tabs-detail_container ul {
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.tabs-detail_container ul li {
+    padding: 2rem .75rem 1rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    display: inline-block;
+    position: relative;
+    color: #0b5da7;
+    text-decoration: none;
+    position: relative;
+}
+
+.tabs-detail_container ul li a {
+    transition: color .3s;
+    font-weight: 700;
+    font-size: 20px;
+    /* color: #171717; */
+    text-decoration: none;
+    /* color: #000; */
+    font-size: 18px;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.tabs-detail_container ul li a:hover {
+    color: #007BFF;
+}
+
+.tabs-detail_container ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007BFF;
+    transition: width 0.3s ease-out;
+}
+
+.tabs-detail_container ul li a:hover::after {
+    width: 100%;
+}
+
+/* end tab visible */
+
+/* tour detail  */
+.tour-detail {
+    width: 80%;
+}
+
+.tour-detail-content {
+    display: flex;
+    gap: 3rem;
+}
+
+.tour-detail_content-left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.img-main {
+    display: flex;
+    width: 100%;
+    max-height: 52rem;
+}
+
+.img-main img {
+    width: 100%;
+    height: 100%;
+}
+
+/* overview */
+.tour-overview h3 {
+    display: flex;
+    padding: 10px;
+    font-size: 2.3rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2rem 0;
+}
+
+.overview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.overview-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.overview-content .overview-i1,
+.overview-i2 {
+    display: flex;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.overview-item svg {
+    margin-bottom: .4rem;
+    color: black;
+}
+
+.overview-item .overview-content-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: .8rem 0;
+}
+
+.overview-item p {
+    margin: .5rem 0;
+    font-size: 1.4rem;
+}
+
+/* end overview */
+
+/* Tour-info */
+.selection-detail {
+    margin: 0;
+}
+
+.selection-detail h3 {
+    display: flex;
+    padding: 10px;
+    font-size: 2.3rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2rem 0;
+}
+
+.calendar-container {
+    display: flex;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* Sidebar */
+.calendar-sidebar {
+    width: 14rem;
+    background-color: #ffffff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+
+.calendar-sidebar h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.calendar-sidebar ul {
+    list-style: none;
+}
+
+.calendar-sidebar li {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.calendar-sidebar li:hover,
+.calendar-sidebar li.active {
+    background-color: #007bff8f;
+    color: white;
+}
+
+#monthList li.active {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    cursor: default;
+}
+
+#monthList li {
+    font-size: 1.8rem;
+    padding: 20px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color: #007bff;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#monthList li:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* end Slider  */
+
+
+/* Calendar */
+.calendar {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Header */
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 1rem;
+}
+
+.calendar-header h2 {
+    font-size: 2.3rem;
+    color: #00BFFF;
+    padding: 10px;
+    margin: 0 40px;
+}
+
+button {
+    background-color: #DDDDDD;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Weekdays */
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 1.4rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.weekend {
+    color: red;
+}
+
+/* Days */
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+}
+
+.day {
+    display: flex;
+    width: 100%;
+    height: 65px;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 6px 3px 2px 3px;
+    border-radius: 10px;
+}
+
+.current-day {
+    color: red;
+}
+
+.day.price span {
+    font-size: 0.8rem;
+    color: red;
+}
+
+.day:hover {
+    border: 1px solid red;
+}
+
+.day.selected {
+    border: 2px solid #FF5733;
+}
+
+.empty {
+    background: transparent;
+}
+
+/* End Tour-info */
+
+.tour-detail_content-right {
+    /* width: 30%; */
+    flex-basis: 30%;
+}
+
+.booking-tour {
+    top: 7rem;
+    position: sticky;
+}
+
+.border-shadow {
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 0 hsla(0, 0%, 9%, .12);
+    padding: 1.5rem;
+}
+
+
+.tour-pice {
+    margin-bottom: 1rem;
+}
+
+.tour-pice .tour-orderpice {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tour-pice .tour-orderpice h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000 !important;
+}
+
+h4 {
+    display: block;
+    margin-block-end: 1.3em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.tour-pice .pice {
+    color: #e01600;
+    font-size: 3.4rem;
+}
+
+.tour-pice .pice p {
+    margin: 1rem 0;
+    font-weight: 650;
+}
+
+.tour-pice .pice span {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #171717;
+}
+
+.tour-pice-pagecode {
+    font-size: 1.7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2rem 0;
+    gap: .5rem;
+}
+
+.tour-pice-pagecode p {
+    margin: 0;
+}
+
+.tour-pice-pagecode span {
+    font-weight: 700;
+}
+
+.btn-pick {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    background-color: #0066FF;
+}
+
+/* end container */
+
+
+/* footer */
+/* .footer-content {
+    width: 100%;
+    max-height: 400px;
+    background-color: black;
+    height: 3000px;
+    margin-top: 1.5rem;
+} */
+
+/* end footer */
+
+.tourPice-info {
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.info_tour_detail {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.info {
+    display: flex;
+    margin: 10px 5px 10px 0;
+    gap: 6px;
+    font-size: 16px;
+}
+
+.info span {
+    font-weight: 600;
+}
+
+.tourOption {
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    gap: 10px;
+}
+
+.diffirent-option,
+.order-tour {
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+/* .diffirent-option {
+    width: 40%;
+    background-color: white;
+    color: red;
+    border: 1.2px red solid;
+} */
+
+.order-tour {
+    width: 100%;
+    background-color: red;
+    color: white;
+}
+
+.diffirent-option:hover {
+    background-color: white;
+}
+
+.order-tour:hover {
+    background-color: #bd1919ed;
+}
+
+/* .tourPice-info,
+.tourOption {
+    display: none;
+} */

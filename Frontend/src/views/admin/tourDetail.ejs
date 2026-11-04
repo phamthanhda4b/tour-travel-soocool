@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cập nhật Thông Tin Chi tiết Tour</title>
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/assets/css/tourAdd.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+</head>
+
+<body>
+  <div class="tour-crud">
+    <%- include('./menuBar.ejs') %>
+      <div class="tour__admin--add-form" id="addTourForm">
+        <h1>Cập Nhật Thông Tin Chi Tiết Tour</h1>
+        <form class="crudFrom">
+          <div class="lable_input">
+            <label class="from_lable" for="detailId">ID:</label>
+            <input type="text" class="tour_input" id="detailId" name="detailId" readonly>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="sightSeeing">Điểm tham quan:</label>
+            <input type="text" class="tour_input" id="sightSeeing" name="sightSeeing" required>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="cuisine">Ẩm thực:</label>
+            <input type="text" class="tour_input" id="cuisine" name="cuisine"  required>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="suitablePeople">Đối tượng thích hợp:</label>
+            <input type="text" class="tour_input" id="suitablePeople" name="suitablePeople"  required>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="timeSuitable">Thời gian lý tưởng:</label>
+            <input type="text" class="tour_input" id="timeSuitable" name="timeSuitable"  required>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="transport">Phương tiện:</label>
+            <input type="text" class="tour_input" id="transport" name="transport"  required>
+          </div>
+          <div class="lable_input">
+            <label class="from_lable" for="saleDescription">Khuyến mãi:</label>
+            <input type="text" class="tour_input" id="saleDescription" name="saleDescription"  required>
+          </div>
+          <div class="form-button">
+            <button class="form-button-cancel" type="button" id="cancelAddTour">Hủy</button>
+            <button class="form-button-submit" type="submit">Lưu</button>
+          </div>
+        </form>
+      </div>
+      <%- include('../partials/baseScript')%>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/tourDetail.js"></script>
+</body>
+
+</html>

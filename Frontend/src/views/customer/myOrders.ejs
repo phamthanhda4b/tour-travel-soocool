@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour đã đặt - 3TV Travel</title>
+    <!-- Logo -->
+    <link
+      rel="icon"
+      href="/assets/image/logo/logo-load.png"
+      type="image/icon type"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/grid.css" />
+    <link rel="stylesheet" href="/assets/css/home.css" />
+    <link rel="stylesheet" href="/assets/css/myOrders.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/7b9d660613.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('../partials/headerCustomer')%>
+
+    <!-- Main Content -->
+    <main class="my-orders-page">
+      <div class="grid wide">
+        <div class="row">
+          <div class="col l-12 m-12 c-12">
+            <div class="my-orders__header">
+              <h1 class="my-orders__title">
+                <i class="fa-solid fa-suitcase-rolling"></i> Danh sách tour đã đặt
+              </h1>
+              <p class="my-orders__subtitle">
+                Theo dõi tình trạng và xem chi tiết các tour du lịch bạn đã đặt tại 3TV Travel
+              </p>
+            </div>
+
+            <% if (!orders || orders.length === 0) { %>
+              <!-- Trạng thái trống -->
+              <div class="orders-empty">
+                <div class="orders-empty__icon">
+                  <i class="fa-solid fa-receipt"></i>
+                </div>
+                <h3 class="orders-empty__title">Bạn chưa có đơn đặt tour nào</h3>
+                <p class="orders-empty__desc">
+                  Hãy khám phá hàng trăm hành trình hấp dẫn với giá ưu đãi và đặt tour ngay hôm nay!
+                </p>
+                <a href="/" class="orders-empty__btn">
+                  <i class="fa-solid fa-compass"></i> Khám phá tour ngay
+                </a>
+              </div>
+            <% } else { %>
+              <div class="my-orders__list">
+                <% orders.forEach(function(order) { %>
+                  <% 
+                    const tourOrder = order.tourOrder || {};
+                    const tour = tourOrder.tour || {};
+                    const members = tourOrder.members || [];
+                    const status = order.status;
+                  %>
+                  <div class="order-card">
+                    <!-- Header của thẻ đơn -->
+                    <div class="order-card__header">
+                      <div class="order-card__meta">
+                        <div class="order-card__id">
+                          <i class="fa-solid fa-ticket"></i> Mã đơn: #<%= order.tour_order_Id %>
+                        </div>
+                        <div class="order-card__date">
+                          <i class="fa-regular fa-clock"></i> 
+                          <%= tourOrder.order_date ? moment(tourOrder.order_date).format('DD/MM/YYYY HH:mm') : 'N/A' %>
+                        </div>
+                      </div>
+
+                      <div class="order-card__status">
+                        <% if (status === 0) { %>
+                          <span class="order-badge order-badge--pending">
+                            <i class="fa-solid fa-hourglass-half"></i> Đang chờ xử lý
+                          </span>
+                        <% } else if (status === 1) { %>
+                          <span class="order-badge order-badge--received">
+                            <i class="fa-solid fa-paper-plane"></i> Đã tiếp nhận
+                          </span>
+                        <% } else if (status === 2) { %>
+                          <span class="order-badge order-badge--completed">
+                            <i class="fa-solid fa-circle-check"></i> Đã hoàn thành
+                          </span>
+                        <% } else if (status === -1) { %>
+                          <span class="order-badge order-badge--canceled">
+                            <i class="fa-solid fa-ban"></i> Đã hủy
+                          </span>
+                        <% } else { %>
+                          <span class="order-badge">
+                            <%= status %>
+                          </span>
+                        <% } %>
+                      </div>
+                    </div>
+
+                    <!-- Thân thẻ đơn -->
+                    <div class="order-card__body">
+                      <div class="order-card__thumb">
+                        <img 
+                          src="<%= tour.image || '/assets/image/order/thank.png' %>" 
+                          alt="<%= tour.name || 'Ảnh tour' %>" 
+                          onerror="this.src='/assets/image/order/thank.png'"
+                        />
+                      </div>
+
+                      <div class="order-card__info">
+                        <h3 class="order-card__tour-name">
+                          <a href="/detail/<%= tour.id %>"><%= tour.name || 'Tour du lịch' %></a>
+                        </h3>
+
+                        <div class="order-card__grid">
+                          <div class="order-card__grid-item">
+                            <i class="fa-solid fa-barcode"></i>
+                            <span>Mã tour: <strong><%= tour.id || 'N/A' %></strong></span>
+                          </div>
+
+                          <div class="order-card__grid-item">
+                            <i class="fa-solid fa-calendar-day"></i>
+                            <span>Khởi hành: <strong><%= order.tour_start_date ? moment(order.tour_start_date).format('DD/MM/YYYY') : 'N/A' %></strong></span>
+                          </div>
+
+                          <div class="order-card__grid-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Nơi đi: <%= tour.departure_point || 'N/A' %></span>
+                          </div>
+
+                          <div class="order-card__grid-item">
+                            <i class="fa-solid fa-map-pin"></i>
+                            <span>Điểm đến: <%= tour.destination || 'N/A' %></span>
+                          </div>
+
+                          <div class="order-card__grid-item">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Số hành khách: <strong><%= tourOrder.total_member || members.length || 1 %> người</strong></span>
+                          </div>
+
+                          <% if (tour.tourType) { %>
+                            <div class="order-card__grid-item">
+                              <i class="fa-solid fa-tag"></i>
+                              <span>Loại tour: <%= tour.tourType.name %></span>
+                            </div>
+                          <% } %>
+                        </div>
+
+                        <% if (tourOrder.note && tourOrder.note.trim()) { %>
+                          <div style="margin-top: 10px; font-size: 13px; color: #64748b; font-style: italic;">
+                            <i class="fa-solid fa-pen-fancy"></i> Ghi chú: <%= tourOrder.note %>
+                          </div>
+                        <% } %>
+
+                        <!-- Danh sách hành khách trong đoàn -->
+                        <% if (members && members.length > 0) { %>
+                          <div class="order-card__members">
+                            <div class="order-card__members-title">
+                              <span><i class="fa-solid fa-user-group"></i> Danh sách hành khách (<%= members.length %>)</span>
+                              <i class="fa-solid fa-chevron-down chevron"></i>
+                            </div>
+                            <div class="order-card__members-list">
+                              <% members.forEach(function(member, index) { %>
+                                <div class="order-card__member-row">
+                                  <div class="order-card__member-name">
+                                    <%= index + 1 %>. <%= member.name %>
+                                  </div>
+                                  <div class="order-card__member-meta">
+                                    <span>Giới tính: <%= member.gender === 'NAM' ? 'Nam' : 'Nữ' %></span>
+                                    <span>Ngày sinh: <%= member.bod ? moment(member.bod).format('DD/MM/YYYY') : 'N/A' %></span>
+                                    <span>
+                                      <% if (member.role === 3) { %>
+                                        (Người lớn)
+                                      <% } else if (member.role === 1) { %>
+                                        (Trẻ em)
+                                      <% } else if (member.role === 2) { %>
+                                        (Trẻ nhỏ)
+                                      <% } else { %>
+                                        (Em bé)
+                                      <% } %>
+                                    </span>
+                                  </div>
+                                </div>
+                              <% }); %>
+                            </div>
+                          </div>
+                        <% } %>
+                      </div>
+                    </div>
+
+                    <!-- Footer của thẻ đơn -->
+                    <div class="order-card__footer">
+                      <div class="order-card__total">
+                        Tổng thanh toán: 
+                        <span class="order-card__total-price">
+                          <%= Intl.NumberFormat('vi-VN').format(tourOrder.total_price || 0) %> &#x20AB;
+                        </span>
+                      </div>
+
+                      <div class="order-card__actions">
+                        <a href="/detail/<%= tour.id %>" class="btn-order btn-order--view">
+                          <i class="fa-solid fa-circle-info"></i> Chi tiết tour
+                        </a>
+
+                        <% if (status === 0) { %>
+                          <button class="btn-order btn-order--cancel" data-order-id="<%= order.tour_order_Id %>">
+                            <i class="fa-solid fa-xmark"></i> Hủy đơn
+                          </button>
+                        <% } %>
+                      </div>
+                    </div>
+                  </div>
+                <% }); %>
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include('../partials/footerCustomer')%>
+
+    <!-- Base Scripts -->
+    <%- include('../partials/baseScriptFE')%>
+    <script src="/js/components/headerLogin.js"></script>
+    <script src="/js/customer/myOrders.js"></script>
+  </body>
+</html>

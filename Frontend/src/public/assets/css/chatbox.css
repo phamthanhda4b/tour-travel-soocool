@@ -1,0 +1,452 @@
+/* ========================================================
+   FLOATING WIDGETS: BACK TO TOP (LEFT) & CHATBOX (RIGHT)
+   TourDL - 3TV Travel
+   ======================================================== */
+
+/* 1. Nút di chuyển lên đầu trang (Mép dưới bên trái) */
+.button-top {
+  position: fixed !important;
+  bottom: 30px !important;
+  left: 30px !important;
+  right: auto !important;
+  width: 46px !important;
+  height: 46px !important;
+  background: #0b5da7 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 50% !important;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9998 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.button-top.active {
+  display: flex !important;
+  animation: buttonTopFadeIn 0.3s ease-out forwards;
+}
+
+.button-top:hover {
+  background: #084379 !important;
+  color: #ffffff !important;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(11, 93, 167, 0.45);
+}
+
+.button-top .button-top__item {
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes buttonTopFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Chatbox widget (Mép dưới bên phải) */
+.tour-chatbox-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  font-family: 'Mulish', 'Roboto', sans-serif;
+  user-select: none;
+}
+
+/* Nút Logo Chatbox chính (chỉ hiển thị logo khi chưa hover) */
+.chatbox-btn-main {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0b5da7 0%, #0084ff 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(11, 93, 167, 0.42);
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  outline: none;
+  border: 2px solid #ffffff;
+}
+
+.chatbox-btn-main .chatbox-icon-main {
+  font-size: 2.6rem;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+/* Vòng sóng lan tỏa (Ripple / Pulse animation) */
+.chatbox-btn-main::before,
+.chatbox-btn-main::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid #0084ff;
+  opacity: 0.8;
+  animation: chatboxPulseRing 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  pointer-events: none;
+}
+
+.chatbox-btn-main::after {
+  animation-delay: 0.7s;
+}
+
+@keyframes chatboxPulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+/* Chấm xanh online báo hiệu đang sẵn sàng tư vấn */
+.chatbox-online-status {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 13px;
+  height: 13px;
+  background: #10b981;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+}
+
+/* Popup menu chứa 3 lựa chọn */
+.chatbox-popup-menu {
+  position: absolute;
+  bottom: 72px;
+  right: 0;
+  width: 290px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px) scale(0.95);
+  transform-origin: bottom right;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  border: 1px solid #eef2f6;
+}
+
+/* Vùng đệm vô hình nối giữa popup và button để chuột rê mượt mà không bị mất hover */
+.tour-chatbox-widget::before {
+  content: '';
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  width: 290px;
+  height: 26px;
+  display: none;
+}
+
+/* KHI HOVER VÀO CHATBOX: BẮT ĐẦU HIỆN RA 3 LỰA CHỌN */
+.tour-chatbox-widget:hover .chatbox-popup-menu,
+.tour-chatbox-widget.is-open .chatbox-popup-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.tour-chatbox-widget:hover::before {
+  display: block;
+}
+
+.tour-chatbox-widget:hover .chatbox-btn-main,
+.tour-chatbox-widget.is-open .chatbox-btn-main {
+  transform: scale(1.06);
+  box-shadow: 0 6px 24px rgba(11, 93, 167, 0.5);
+}
+
+.tour-chatbox-widget:hover .chatbox-btn-main::before,
+.tour-chatbox-widget:hover .chatbox-btn-main::after {
+  animation: none;
+  opacity: 0;
+}
+
+/* Header của Popup */
+.chatbox-popup-header {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatbox-header-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.chatbox-header-status {
+  font-size: 1.15rem;
+  color: #10b981;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chatbox-header-status::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Danh sách 3 lựa chọn */
+.chatbox-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chatbox-option-item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chatbox-option-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.22s ease-in-out;
+  background: #f8fafc;
+  border: 1px solid #edf2f7;
+  cursor: pointer;
+}
+
+.chatbox-option-link:hover {
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 1. Lựa chọn Điện thoại */
+.chatbox-option-phone:hover {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+.chatbox-option-phone .chatbox-option-icon {
+  background: #10b981;
+  color: #ffffff;
+}
+
+/* 2. Lựa chọn Zalo */
+.chatbox-option-zalo:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+.chatbox-option-zalo .chatbox-option-icon {
+  background: #0068ff;
+  color: #ffffff;
+}
+
+/* 3. Lựa chọn Messenger */
+.chatbox-option-messenger:hover {
+  background: #fdf4ff;
+  border-color: #f5d0fe;
+}
+.chatbox-option-messenger .chatbox-option-icon {
+  background: linear-gradient(135deg, #0084ff 0%, #a033ff 50%, #ff5280 100%);
+  color: #ffffff;
+}
+
+.chatbox-option-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.chatbox-option-icon svg {
+  display: block;
+}
+
+.chatbox-option-content {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.chatbox-option-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.chatbox-option-desc {
+  font-size: 1.2rem;
+  color: #64748b;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.chatbox-option-action {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.chatbox-option-link:hover .chatbox-option-action {
+  color: #0b5da7;
+  transform: translateX(3px);
+}
+
+/* Responsive cho màn hình nhỏ / điện thoại */
+@media (max-width: 576px) {
+  .button-top {
+    bottom: 20px !important;
+    left: 20px !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .tour-chatbox-widget {
+    bottom: 20px;
+    right: 20px;
+  }
+  .chatbox-btn-main {
+    width: 52px;
+    height: 52px;
+  }
+  .chatbox-btn-main .chatbox-icon-main {
+    font-size: 2.2rem;
+  }
+  .chatbox-popup-menu {
+    width: 270px;
+    bottom: 64px;
+  }
+}
+
+/* ========================================================
+   HEADER NAVIGATION MENU CẠNH LOGO
+   ======================================================== */
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-decoration: none;
+  transition: all 0.22s ease-in-out;
+  background-color: transparent;
+}
+
+.header__nav-link i {
+  font-size: 1.5rem;
+  color: #0b5da7;
+  transition: transform 0.2s ease;
+}
+
+.header__nav-link:hover {
+  background-color: #f0f7ff;
+  color: #0b5da7;
+  transform: translateY(-2px);
+}
+
+.header__nav-link:hover i {
+  transform: scale(1.15);
+}
+
+.header__nav-link--orders {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #0b5da7;
+}
+
+.header__nav-link--orders:hover {
+  background-color: #0b5da7;
+  color: #ffffff;
+  border-color: #0b5da7;
+  box-shadow: 0 4px 12px rgba(11, 93, 167, 0.28);
+}
+
+.header__nav-link--orders:hover i {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .header__left {
+    gap: 14px;
+  }
+  .header__nav {
+    gap: 8px;
+  }
+  .header__nav-link {
+    padding: 6px 10px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header__nav-link span {
+    display: none;
+  }
+  .header__nav-link {
+    padding: 8px;
+  }
+}
